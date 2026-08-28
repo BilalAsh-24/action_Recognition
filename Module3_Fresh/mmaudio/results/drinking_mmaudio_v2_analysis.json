@@ -1,0 +1,113 @@
+{
+  "file": "mmaudio/results/drinking_mmaudio_v2.wav",
+  "1_duration_s": 4.504671,
+  "2_sample_rate": 44100,
+  "3_channels": 1,
+  "4_rms": 0.0056300616179230665,
+  "5_peak": 0.199676513671875,
+  "5_peak_dbfs": -13.993460293227105,
+  "6_clipping": {
+    "samples_at_or_over_1.0": 0,
+    "samples_over_0.99": 0,
+    "clipped": false
+  },
+  "7_nan_inf": {
+    "nan": 0,
+    "inf": 0,
+    "all_finite": true
+  },
+  "crest_factor_db": 31.0,
+  "8_acoustic_onset_s": 4.0083,
+  "9_acoustic_offset_s": 4.5047,
+  "envelope": {
+    "noise_floor_p10": 0.0011651700828224421,
+    "threshold": 0.006500320010818541,
+    "env_peak": 0.05451666936278343,
+    "db_p5": -34.15,
+    "db_p50": -30.86,
+    "db_p95": -22.23,
+    "dynamic_range_p95_p5_db": 11.92
+  },
+  "10_event_count": 1,
+  "11_event_durations_s": [
+    0.2061
+  ],
+  "11_event_duration_stats": {
+    "mean": 0.2061,
+    "min": 0.2061,
+    "max": 0.2061
+  },
+  "12_event_spacing_s": [],
+  "12_event_spacing_stats": null,
+  "events_detail": [
+    {
+      "idx": 1,
+      "start_s": 4.299,
+      "end_s": 4.505,
+      "dur_s": 0.206,
+      "in_action_window": false,
+      "peak": 0.199676513671875
+    }
+  ],
+  "13_spectral": {
+    "centroid_hz_mean": 5368.0,
+    "centroid_hz_std": 1006.2,
+    "rolloff95_hz": 14878.0,
+    "bandwidth_hz": 5032.8,
+    "flatness_mean": 0.05878,
+    "zcr_mean": 0.13168,
+    "frame_to_frame_self_similarity": 0.8991,
+    "energy_pct_0_200hz": 18.25,
+    "energy_pct_200_1k": 75.06,
+    "energy_pct_1k_4k": 5.32,
+    "energy_pct_4k_8k": 0.78,
+    "energy_pct_8k_16k": 0.57,
+    "energy_pct_16k_22k": 0.01
+  },
+  "14_silence": {
+    "pct_frames_below_-20db": 95.49,
+    "pct_frames_below_-30db": 64.33,
+    "pct_frames_below_-40db": 0.0,
+    "pct_frames_below_acoustic_threshold": 95.81,
+    "true_digital_silence_pct": 0.743
+  },
+  "15_action_window_activity": {
+    "action_window_in_clip_s": [
+      1.0,
+      4.0
+    ],
+    "action_window_in_source_s": [
+      5.5,
+      8.5
+    ],
+    "segments": {
+      "pre_0_to_1.00": {
+        "dur_s": 1.0,
+        "rms": 0.001512,
+        "peak": 0.008087,
+        "pct_active": 0.0
+      },
+      "ACTION_1.00_4.00": {
+        "dur_s": 3.0,
+        "rms": 0.00168,
+        "peak": 0.019653,
+        "pct_active": 0.0
+      },
+      "post_4.00_end": {
+        "dur_s": 0.505,
+        "rms": 0.016175,
+        "peak": 0.199677,
+        "pct_active": 36.78
+      }
+    },
+    "events_in_action_window": 0,
+    "longest_gap_inside_action_s": 0.0
+  },
+  "per_second_rms": [
+    0.001512,
+    0.001407,
+    0.001592,
+    0.001988,
+    0.016175
+  ]
+}

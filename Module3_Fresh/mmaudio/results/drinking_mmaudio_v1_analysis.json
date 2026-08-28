@@ -1,0 +1,161 @@
+{
+  "file": "mmaudio/results/drinking_mmaudio_v1.wav",
+  "1_duration_s": 7.964444,
+  "2_sample_rate": 44100,
+  "3_channels": 1,
+  "4_rms": 0.004254962242129819,
+  "5_peak": 0.1502685546875,
+  "5_peak_dbfs": -16.462637814008787,
+  "6_clipping": {
+    "samples_at_or_over_1.0": 0,
+    "samples_over_0.99": 0,
+    "clipped": false
+  },
+  "7_nan_inf": {
+    "nan": 0,
+    "inf": 0,
+    "all_finite": true
+  },
+  "crest_factor_db": 30.96,
+  "8_acoustic_onset_s": 0.0203,
+  "9_acoustic_offset_s": 7.9209,
+  "envelope": {
+    "noise_floor_p10": 0.0009738563327118755,
+    "threshold": 0.004251114323269576,
+    "env_peak": 0.03374643623828888,
+    "db_p5": -31.46,
+    "db_p50": -27.39,
+    "db_p95": -12.76,
+    "dynamic_range_p95_p5_db": 18.7
+  },
+  "10_event_count": 5,
+  "11_event_durations_s": [
+    0.4963,
+    0.0871,
+    0.1596,
+    0.4528,
+    0.0464
+  ],
+  "11_event_duration_stats": {
+    "mean": 0.2484,
+    "min": 0.0464,
+    "max": 0.4963
+  },
+  "12_event_spacing_s": [
+    0.4209,
+    0.2177,
+    0.1771,
+    5.8456
+  ],
+  "12_event_spacing_stats": {
+    "mean": 1.6653,
+    "min": 0.1771,
+    "max": 5.8456
+  },
+  "events_detail": [
+    {
+      "idx": 1,
+      "start_s": 0.02,
+      "end_s": 0.517,
+      "dur_s": 0.496,
+      "in_action_window": false,
+      "peak": 0.055999755859375
+    },
+    {
+      "idx": 2,
+      "start_s": 0.938,
+      "end_s": 1.025,
+      "dur_s": 0.087,
+      "in_action_window": false,
+      "peak": 0.0252685546875
+    },
+    {
+      "idx": 3,
+      "start_s": 1.242,
+      "end_s": 1.402,
+      "dur_s": 0.16,
+      "in_action_window": false,
+      "peak": 0.0496826171875
+    },
+    {
+      "idx": 4,
+      "start_s": 1.579,
+      "end_s": 2.032,
+      "dur_s": 0.453,
+      "in_action_window": false,
+      "peak": 0.1502685546875
+    },
+    {
+      "idx": 5,
+      "start_s": 7.877,
+      "end_s": 7.924,
+      "dur_s": 0.046,
+      "in_action_window": false,
+      "peak": 0.013580322265625
+    }
+  ],
+  "13_spectral": {
+    "centroid_hz_mean": 4496.9,
+    "centroid_hz_std": 711.1,
+    "rolloff95_hz": 15307.1,
+    "bandwidth_hz": 5051.6,
+    "flatness_mean": 0.02727,
+    "zcr_mean": 0.08305,
+    "frame_to_frame_self_similarity": 0.8983,
+    "energy_pct_0_200hz": 36.77,
+    "energy_pct_200_1k": 41.56,
+    "energy_pct_1k_4k": 16.14,
+    "energy_pct_4k_8k": 4.03,
+    "energy_pct_8k_16k": 1.49,
+    "energy_pct_16k_22k": 0.02
+  },
+  "14_silence": {
+    "pct_frames_below_-20db": 82.62,
+    "pct_frames_below_-30db": 16.79,
+    "pct_frames_below_-40db": 0.0,
+    "pct_frames_below_acoustic_threshold": 86.48,
+    "true_digital_silence_pct": 0.7269
+  },
+  "15_action_window_activity": {
+    "action_window_in_clip_s": [
+      3.5,
+      6.5
+    ],
+    "action_window_in_source_s": [
+      5.5,
+      8.5
+    ],
+    "segments": {
+      "pre_0_to_3.50": {
+        "dur_s": 3.5,
+        "rms": 0.006193,
+        "peak": 0.150269,
+        "pct_active": 29.46
+      },
+      "ACTION_3.50_6.50": {
+        "dur_s": 3.0,
+        "rms": 0.001394,
+        "peak": 0.007965,
+        "pct_active": 0.0
+      },
+      "post_6.50_end": {
+        "dur_s": 1.464,
+        "rms": 0.001675,
+        "peak": 0.01358,
+        "pct_active": 3.17
+      }
+    },
+    "events_in_action_window": 0,
+    "longest_gap_inside_action_s": 0.0
+  },
+  "per_second_rms": [
+    0.006399,
+    0.009412,
+    0.002003,
+    0.001352,
+    0.001342,
+    0.00135,
+    0.001394,
+    0.001839
+  ]
+}

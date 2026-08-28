@@ -1,0 +1,13 @@
+VIDEO: /Users/bilalashfaque/Desktop/Silent-Video-Project/03-FoleyCrafter-Test/test_video.mp4
+DURATION: 1.293s   WINDOW: 1.000s   STRIDE: 0.098s   VOCAB: 24 labels
+
+RAW WINDOW PREDICTIONS (top-1 before smoothing)
+
+ 0.00 ──────────────────  1.00  standing up            0.262  -> standing up
+ 0.10 ──────────────────  1.10  standing up            0.262  -> standing up
+ 0.20 ──────────────────  1.20  standing up            0.276  -> standing up
+ 0.29 ──────────────────  1.29  standing up            0.305  -> standing up
+
+FINAL SEGMENTS
+
+ 0.00 ──────────────────  1.29  standing up            0.276  [candidate]

@@ -1,0 +1,321 @@
+{
+  "run": "drinking_mmaudio_v1",
+  "generations": 1,
+  "action": {
+    "label": "drink from cup",
+    "start_s": 5.5,
+    "end_s": 8.5,
+    "duration_s": 3.0,
+    "source": "Module 2 resolved_actions (confirmed, 3 supporting windows)"
+  },
+  "video": {
+    "source": "input/test_video.mp4",
+    "context_window_s": [
+      4.5,
+      9.0
+    ],
+    "context_clip": "work/context_4.5_9.0.mp4",
+    "action_within_context_s": [
+      1.0,
+      4.0
+    ],
+    "audio_stream_used": false
+  },
+  "model": {
+    "variant": "small_44k",
+    "mode": "44k",
+    "device": "mps",
+    "net_ckpt": "models/weights/mmaudio_small_44k.pth",
+    "vae_ckpt": "models/ext_weights/v1-44.pth",
+    "synchformer_ckpt": "models/ext_weights/synchformer_state_dict.pth",
+    "clip": "apple/DFN5B-CLIP-ViT-H-14-384 (HF cache)",
+    "vocoder": "nvidia/bigvgan_v2_44khz_128band_512x (HF cache)"
+  },
+  "precision": {
+    "clip_synchformer": "torch.bfloat16",
+    "diffusion": "torch.float32",
+    "decode": "torch.float32",
+    "float16_used": false
+  },
+  "sampler": {
+    "seed": 42,
+    "num_steps": 25,
+    "cfg_strength": 4.5,
+    "inference_mode": "euler",
+    "min_sigma": 0,
+    "clip_batch_multiplier": 40,
+    "sync_batch_multiplier": 40
+  },
+  "prompt": {
+    "text": "Realistic close-up Foley of a person drinking water from a ceramic cup, with repeated natural sips, audible swallowing, wet mouth sounds, gentle breathing, and subtle cup-to-lips sounds. Clearly recognizable continuous human drinking.",
+    "negative_text": "music, speech, talking, voice, footsteps, background ambience, room tone, cinematic effects, clicks, pops, electronic sounds, noise"
+  },
+  "phases": {
+    "phase1": {
+      "phase": 1,
+      "role": "conditioning (CLIP + Synchformer)",
+      "video": {
+        "path": "work/context_4.5_9.0.mp4",
+        "requested_duration_s": 4.5,
+        "actual_duration_s": 4.5,
+        "orig_fps": "24",
+        "clip_frames_shape": [
+          1,
+          36,
+          3,
+          384,
+          384
+        ],
+        "sync_frames_shape": [
+          1,
+          112,
+          3,
+          224,
+          224
+        ]
+      },
+      "seq_cfg": {
+        "latent_seq_len": 194,
+        "clip_seq_len": 36,
+        "sync_seq_len": 104,
+        "sampling_rate": 44100,
+        "num_audio_frames": 198656
+      },
+      "verification": {
+        "name": "FeaturesUtils(conditions)",
+        "params_M": 1109.16,
+        "dtypes": [
+          "torch.bfloat16"
+        ],
+        "devices": [
+          "mps"
+        ],
+        "clip_params_M": 986.71,
+        "synchformer_params_M": 122.44,
+        "tod_is_none": true,
+        "load_s": 11.38
+      },
+      "features": {
+        "clip": {
+          "shape": [
+            1,
+            36,
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "finite": true,
+          "absmax": 0.271484
+        },
+        "sync": {
+          "shape": [
+            1,
+            104,
+            768
+          ],
+          "dtype": "torch.bfloat16",
+          "finite": true,
+          "absmax": 254.0
+        },
+        "text": {
+          "shape": [
+            1,
+            77,
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "finite": true,
+          "absmax": 0.855469
+        },
+        "negative_text": {
+          "shape": [
+            1,
+            77,
+            1024
+          ],
+          "dtype": "torch.bfloat16",
+          "finite": true,
+          "absmax": 0.855469
+        }
+      },
+      "handoff": {
+        "file": "work/phase1_conditioning_v2.pt",
+        "saved_dtype": "torch.float32",
+        "saved_device": "cpu",
+        "bytes": 1100467,
+        "note": "upcast bf16 -> fp32 at the phase boundary; phase 2 is float32"
+      },
+      "residency_after_free": {
+        "Synchformer": 0,
+        "FeaturesUtils": 0
+      },
+      "timing_s": {
+        "model_load": 11.38,
+        "extract": 18.0,
+        "phase_total": 31.4
+      }
+    },
+    "phase2": {
+      "phase": 2,
+      "role": "diffusion (MMAudio net only)",
+      "conditioning_in": {
+        "clip": [
+          1,
+          36,
+          1024
+        ],
+        "sync": [
+          1,
+          104,
+          768
+        ],
+        "text": [
+          1,
+          77,
+          1024
+        ],
+        "negative_text": [
+          1,
+          77,
+          1024
+        ]
+      },
+      "featuresutils_empty_params": 0,
+      "verification": {
+        "name": "MMAudio net small_44k",
+        "params_M": 157.41,
+        "dtypes": [
+          "torch.float32"
+        ],
+        "devices": [
+          "mps"
+        ],
+        "load_s": 0.74
+      },
+      "rng": {
+        "seed": 42,
+        "device": "mps",
+        "generator_consumers": [
+          "x0"
+        ],
+        "x0_shape": [
+          1,
+          194,
+          40
+        ],
+        "x0_mean": 0.008480656892061234,
+        "x0_std": 1.0054068565368652,
+        "x0_sum": 65.80989837646484
+      },
+      "latent": {
+        "shape": [
+          1,
+          194,
+          40
+        ],
+        "finite": true,
+        "mean": 0.23057764768600464,
+        "std": 2.842594861984253,
+        "absmax": 12.034590721130371
+      },
+      "warnings": [],
+      "handoff": {
+        "file": "work/phase2_latent_v2.pt",
+        "bytes": 32872
+      },
+      "residency_after_free": {
+        "MMAudio": 0
+      },
+      "timing_s": {
+        "model_load": 0.74,
+        "diffusion": 2.38,
+        "phase_total": 5.6
+      }
+    },
+    "phase3": {
+      "phase": 3,
+      "role": "decode (VAE decoder + BigVGAN vocoder)",
+      "verification": {
+        "name": "FeaturesUtils(decode)",
+        "params_M": 298.49,
+        "dtypes": [
+          "torch.float32"
+        ],
+        "devices": [
+          "mps"
+        ],
+        "vae_decoder_params_M": 176.34,
+        "vocoder_params_M": 122.15,
+        "clip_is_none": true,
+        "synchformer_is_none": true,
+        "load_s": 5.6
+      },
+      "spec_shape": [
+        1,
+        128,
+        388
+      ],
+      "audio_shape": [
+        1,
+        1,
+        198656
+      ],
+      "raw_float": {
+        "samples": 198656,
+        "peak": 0.19970394670963287,
+        "samples_over_1": 0,
+        "finite": true,
+        "rms": 0.005629858002066612,
+        "duration_s": 4.504671
+      },
+      "wav": {
+        "path": "mmaudio/results/drinking_mmaudio_v2.wav",
+        "sample_rate": 44100,
+        "subtype": "PCM_16",
+        "channels": 1,
+        "clipped_before_write": false,
+        "bytes": 397356
+      },
+      "timing_s": {
+        "model_load": 5.6,
+        "decode_vocode": 2.97,
+        "phase_total": 10.18
+      }
+    }
+  },
+  "status": "SUCCESS",
+  "memory": {
+    "guard_abort_available_gb": 1.5,
+    "guard_max_swap_growth_gb": 6.0,
+    "baseline_used_gb": 6.955,
+    "baseline_available_gb": 7.898,
+    "baseline_swap_gb": 1.185,
+    "total_gb": 17.18,
+    "peak_used_gb": 9.247,
+    "min_available_gb": 2.882,
+    "peak_swap_gb": 1.519,
+    "breach": null,
+    "killed": false,
+    "per_phase": {
+      "1": {
+        "peak_used_gb": 9.247,
+        "min_available_gb": 2.882,
+        "peak_swap_gb": 1.519,
+        "wall_s": 32.39
+      },
+      "2": {
+        "peak_used_gb": 5.391,
+        "min_available_gb": 9.298,
+        "peak_swap_gb": 1.519,
+        "wall_s": 6.62
+      },
+      "3": {
+        "peak_used_gb": 7.722,
+        "min_available_gb": 7.008,
+        "peak_swap_gb": 1.519,
+        "wall_s": 11.11
+      }
+    },
+    "final_swap_gb": 1.519,
+    "swap_growth_gb": 0.334
+  }
+}

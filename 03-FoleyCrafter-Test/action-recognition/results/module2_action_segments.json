@@ -1,0 +1,433 @@
+{
+  "module": "Module 2 - Temporal Action Recognition",
+  "model": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "device": "mps",
+  "dtype": "bfloat16",
+  "video": {
+    "path": "/Users/bilalashfaque/Desktop/Silent-Video-Project/03-FoleyCrafter-Test/action-recognition/module2_test_video.mp4",
+    "duration": 10.005,
+    "fps": "24/1",
+    "fps_avg": "24/1",
+    "frame_count": 240,
+    "resolution": "1280x720",
+    "codec": "h264",
+    "audio_present": true,
+    "audio_used": false
+  },
+  "config": {
+    "window_s": 2.0,
+    "stride_s": 1.0,
+    "frames_per_window": 8,
+    "resize": "448x252",
+    "max_new_tokens": 96,
+    "prompt": "You are analyzing a video for an action-recognition system.\n\nLook only at the visual content.\n\nIdentify the main physical action occurring during this video segment.\n\nReturn:\nACTION: <short action phrase>\nEVIDENCE: <brief visual evidence>\n\nDo not infer sound.\nDo not infer unseen events.\nDo not invent actions that are not visually supported.",
+    "merge_rule": "action-head (-ing verb) match; fallback content containment>=0.5"
+  },
+  "windows": [
+    {
+      "window": 1,
+      "start": 0.0,
+      "end": 2.0,
+      "action": "stand",
+      "evidence": "A man stands in front of a table with a white mug on it.",
+      "action_head": "stand",
+      "raw": "ACTION: stand\nEVIDENCE: A man stands in front of a table with a white mug on it.",
+      "frames_used": 48,
+      "inference_time": 6.67
+    },
+    {
+      "window": 2,
+      "start": 1.0,
+      "end": 3.0,
+      "action": "walk around table",
+      "evidence": "man walks to the left of the table and then back to the right",
+      "action_head": "walk",
+      "raw": "ACTION: walk around table\nEVIDENCE: man walks to the left of the table and then back to the right",
+      "frames_used": 48,
+      "inference_time": 5.39
+    },
+    {
+      "window": 3,
+      "start": 2.0,
+      "end": 4.0,
+      "action": "pick up the cup",
+      "evidence": "man picks up the white mug from the table",
+      "action_head": "pick",
+      "raw": "ACTION: pick up the cup\nEVIDENCE: man picks up the white mug from the table",
+      "frames_used": 48,
+      "inference_time": 5.05
+    },
+    {
+      "window": 4,
+      "start": 3.0,
+      "end": 5.0,
+      "action": "pick up cup",
+      "evidence": "man picks up white mug from table",
+      "action_head": "pick",
+      "raw": "ACTION: pick up cup\nEVIDENCE: man picks up white mug from table",
+      "frames_used": 48,
+      "inference_time": 4.82
+    },
+    {
+      "window": 5,
+      "start": 4.0,
+      "end": 6.0,
+      "action": "pick up cup",
+      "evidence": "man picks up white cup from table",
+      "action_head": "pick",
+      "raw": "ACTION: pick up cup\nEVIDENCE: man picks up white cup from table",
+      "frames_used": 48,
+      "inference_time": 4.83
+    },
+    {
+      "window": 6,
+      "start": 5.0,
+      "end": 7.0,
+      "action": "drink from cup",
+      "evidence": "man holds white mug and drinks from it",
+      "action_head": "drink",
+      "raw": "ACTION: drink from cup\nEVIDENCE: man holds white mug and drinks from it",
+      "frames_used": 48,
+      "inference_time": 4.92
+    },
+    {
+      "window": 7,
+      "start": 6.0,
+      "end": 8.0,
+      "action": "drink from cup",
+      "evidence": "man holds white mug in right hand and drinks from it",
+      "action_head": "drink",
+      "raw": "ACTION: drink from cup\nEVIDENCE: man holds white mug in right hand and drinks from it",
+      "frames_used": 48,
+      "inference_time": 5.25
+    },
+    {
+      "window": 8,
+      "start": 7.0,
+      "end": 9.0,
+      "action": "drink from cup",
+      "evidence": "man holds white mug in right hand and drinks from it",
+      "action_head": "drink",
+      "raw": "ACTION: drink from cup\nEVIDENCE: man holds white mug in right hand and drinks from it",
+      "frames_used": 48,
+      "inference_time": 5.18
+    },
+    {
+      "window": 9,
+      "start": 8.0,
+      "end": 10.0,
+      "action": "place cup on table",
+      "evidence": "man places white cup on wooden table",
+      "action_head": "place",
+      "raw": "ACTION: place cup on table\nEVIDENCE: man places white cup on wooden table",
+      "frames_used": 48,
+      "inference_time": 4.99
+    }
+  ],
+  "actions": [
+    {
+      "action": "stand",
+      "action_head": "stand",
+      "start": 0.0,
+      "end": 2.0,
+      "supporting_windows": [
+        0
+      ]
+    },
+    {
+      "action": "walk around table",
+      "action_head": "walk",
+      "start": 1.0,
+      "end": 3.0,
+      "supporting_windows": [
+        1
+      ]
+    },
+    {
+      "action": "pick up cup",
+      "action_head": "pick",
+      "start": 2.0,
+      "end": 6.0,
+      "supporting_windows": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "action": "drink from cup",
+      "action_head": "drink",
+      "start": 5.0,
+      "end": 9.0,
+      "supporting_windows": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "action": "place cup on table",
+      "action_head": "place",
+      "start": 8.0,
+      "end": 10.0,
+      "supporting_windows": [
+        8
+      ]
+    }
+  ],
+  "actions_detail": [
+    {
+      "action": "stand",
+      "action_head": "stand",
+      "start": 0.0,
+      "end": 2.0,
+      "supporting_windows": [
+        0
+      ],
+      "variants": [
+        "stand"
+      ]
+    },
+    {
+      "action": "walk around table",
+      "action_head": "walk",
+      "start": 1.0,
+      "end": 3.0,
+      "supporting_windows": [
+        1
+      ],
+      "variants": [
+        "walk around table"
+      ]
+    },
+    {
+      "action": "pick up cup",
+      "action_head": "pick",
+      "start": 2.0,
+      "end": 6.0,
+      "supporting_windows": [
+        2,
+        3,
+        4
+      ],
+      "variants": [
+        "pick up the cup",
+        "pick up cup",
+        "pick up cup"
+      ]
+    },
+    {
+      "action": "drink from cup",
+      "action_head": "drink",
+      "start": 5.0,
+      "end": 9.0,
+      "supporting_windows": [
+        5,
+        6,
+        7
+      ],
+      "variants": [
+        "drink from cup",
+        "drink from cup",
+        "drink from cup"
+      ]
+    },
+    {
+      "action": "place cup on table",
+      "action_head": "place",
+      "start": 8.0,
+      "end": 10.0,
+      "supporting_windows": [
+        8
+      ],
+      "variants": [
+        "place cup on table"
+      ]
+    }
+  ],
+  "timing": {
+    "model_load_s": 17.22,
+    "frame_extraction_s": 0.14,
+    "total_inference_s": 47.1,
+    "avg_window_inference_s": 5.23,
+    "total_wall_s": 68.07
+  },
+  "memory": {
+    "baseline_swap_gb": 5.13,
+    "peak_used_gb": 12.0,
+    "min_available_gb": 2.35,
+    "peak_swap_gb": 6.49,
+    "final_swap_gb": 5.94,
+    "guard_breach": null
+  },
+  "resolved_actions": [
+    {
+      "action": "stand",
+      "action_head": "stand",
+      "start": 0.0,
+      "end": 1.5,
+      "duration": 1.5,
+      "supporting_windows": [
+        0
+      ],
+      "support_count": 1,
+      "status": "suspect",
+      "flags": [
+        "single_window_support (1 window)",
+        "first_segment (window sees pre-action framing)"
+      ],
+      "original_span": [
+        0.0,
+        2.0
+      ]
+    },
+    {
+      "action": "walk around table",
+      "action_head": "walk",
+      "start": 1.5,
+      "end": 2.5,
+      "duration": 1.0,
+      "supporting_windows": [
+        1
+      ],
+      "support_count": 1,
+      "status": "suspect",
+      "flags": [
+        "single_window_support (1 window)"
+      ],
+      "original_span": [
+        1.0,
+        3.0
+      ]
+    },
+    {
+      "action": "pick up cup",
+      "action_head": "pick",
+      "start": 2.5,
+      "end": 5.5,
+      "duration": 3.0,
+      "supporting_windows": [
+        2,
+        3,
+        4
+      ],
+      "support_count": 3,
+      "status": "confirmed",
+      "flags": [],
+      "original_span": [
+        2.0,
+        6.0
+      ]
+    },
+    {
+      "action": "drink from cup",
+      "action_head": "drink",
+      "start": 5.5,
+      "end": 8.5,
+      "duration": 3.0,
+      "supporting_windows": [
+        5,
+        6,
+        7
+      ],
+      "support_count": 3,
+      "status": "confirmed",
+      "flags": [],
+      "original_span": [
+        5.0,
+        9.0
+      ]
+    },
+    {
+      "action": "place cup on table",
+      "action_head": "place",
+      "start": 8.5,
+      "end": 10.0,
+      "duration": 1.5,
+      "supporting_windows": [
+        8
+      ],
+      "support_count": 1,
+      "status": "suspect",
+      "flags": [
+        "single_window_support (1 window)",
+        "last_segment (window sees post-action framing)"
+      ],
+      "original_span": [
+        8.0,
+        10.0
+      ]
+    }
+  ],
+  "boundary_resolution": {
+    "method": "midpoint of overlap, left-to-right, deterministic",
+    "min_support_confirmed": 2,
+    "policy": "never delete; thin-evidence segments preserved and marked 'suspect'",
+    "adjustments": [
+      {
+        "between": [
+          "stand",
+          "walk around table"
+        ],
+        "overlap": [
+          1.0,
+          2.0
+        ],
+        "overlap_duration": 1.0,
+        "midpoint_boundary": 1.5,
+        "prev_end_before": 2.0,
+        "next_start_before": 1.0
+      },
+      {
+        "between": [
+          "walk around table",
+          "pick up cup"
+        ],
+        "overlap": [
+          2.0,
+          3.0
+        ],
+        "overlap_duration": 1.0,
+        "midpoint_boundary": 2.5,
+        "prev_end_before": 3.0,
+        "next_start_before": 2.0
+      },
+      {
+        "between": [
+          "pick up cup",
+          "drink from cup"
+        ],
+        "overlap": [
+          5.0,
+          6.0
+        ],
+        "overlap_duration": 1.0,
+        "midpoint_boundary": 5.5,
+        "prev_end_before": 6.0,
+        "next_start_before": 5.0
+      },
+      {
+        "between": [
+          "drink from cup",
+          "place cup on table"
+        ],
+        "overlap": [
+          8.0,
+          9.0
+        ],
+        "overlap_duration": 1.0,
+        "midpoint_boundary": 8.5,
+        "prev_end_before": 9.0,
+        "next_start_before": 8.0
+      }
+    ],
+    "validation": {
+      "chronological": true,
+      "non_overlapping": true,
+      "no_negative_duration": true,
+      "count_preserved": true,
+      "raw_windows_unmodified": true,
+      "merged_segments_unmodified": true
+    }
+  }
+}

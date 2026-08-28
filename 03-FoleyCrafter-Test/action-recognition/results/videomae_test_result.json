@@ -1,0 +1,83 @@
+{
+  "model": "MCG-NJU/videomae-base-finetuned-kinetics",
+  "transformers_version": "4.45.2",
+  "torch_version": "2.13.0",
+  "device": "mps",
+  "video": "/Users/bilalashfaque/Desktop/Silent-Video-Project/03-FoleyCrafter-Test/test_video.mp4",
+  "duration": 1.293333,
+  "width": 1920,
+  "height": 1080,
+  "codec": "hevc",
+  "fps_nominal": "30/1",
+  "fps_average": "300/11",
+  "frame_count": 40,
+  "frames_decoded": 38,
+  "sampled_frames": 16,
+  "audio_present": true,
+  "audio_used": false,
+  "checkpoint_integrity": {
+    "missing_keys": [],
+    "unexpected_keys": [],
+    "mismatched_keys": [],
+    "total_parameters": 86534800
+  },
+  "predictions": [
+    {
+      "rank": 1,
+      "label": "shredding paper",
+      "score": 0.550418
+    },
+    {
+      "rank": 2,
+      "label": "spray painting",
+      "score": 0.090622
+    },
+    {
+      "rank": 3,
+      "label": "cleaning windows",
+      "score": 0.03975
+    },
+    {
+      "rank": 4,
+      "label": "recording music",
+      "score": 0.030658
+    },
+    {
+      "rank": 5,
+      "label": "dancing ballet",
+      "score": 0.025178
+    },
+    {
+      "rank": 6,
+      "label": "unboxing",
+      "score": 0.014237
+    },
+    {
+      "rank": 7,
+      "label": "bookbinding",
+      "score": 0.010773
+    },
+    {
+      "rank": 8,
+      "label": "cleaning gutters",
+      "score": 0.010733
+    },
+    {
+      "rank": 9,
+      "label": "blasting sand",
+      "score": 0.00646
+    },
+    {
+      "rank": 10,
+      "label": "folding paper",
+      "score": 0.004912
+    }
+  ],
+  "model_load_time": 1.932,
+  "frame_extraction_time": 0.391,
+  "preprocess_time": 0.077,
+  "inference_time": 0.507,
+  "total_wall_time": 3.25,
+  "peak_memory_gb": 9.175,
+  "peak_swap_gb": 2.026
+}

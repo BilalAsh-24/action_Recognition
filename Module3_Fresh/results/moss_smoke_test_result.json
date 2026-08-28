@@ -1,0 +1,231 @@
+{
+  "checks": {
+    "import_moss": {
+      "pass": true,
+      "detail": "moss_soundeffect_v2"
+    },
+    "no_other_venv_on_path": {
+      "pass": true,
+      "detail": "clean"
+    },
+    "absent:flash_attn": {
+      "pass": true,
+      "detail": null
+    },
+    "absent:flash_attn_interface": {
+      "pass": true,
+      "detail": null
+    },
+    "absent:xformers": {
+      "pass": true,
+      "detail": null
+    },
+    "absent:triton": {
+      "pass": true,
+      "detail": null
+    },
+    "absent:bitsandbytes": {
+      "pass": true,
+      "detail": null
+    },
+    "ckpt:transformer/diffusion_pytorch_model.safetensors": {
+      "pass": true,
+      "detail": "5.664 GB"
+    },
+    "ckpt:text_encoder/model-00001-of-00002.safetensors": {
+      "pass": true,
+      "detail": "3.441 GB"
+    },
+    "ckpt:text_encoder/model-00002-of-00002.safetensors": {
+      "pass": true,
+      "detail": "0.622 GB"
+    },
+    "ckpt:vae/vae_128d_48k.pth": {
+      "pass": true,
+      "detail": "1.486 GB"
+    },
+    "ckpt:model_index.json": {
+      "pass": true,
+      "detail": "0.000 GB"
+    },
+    "ckpt:tokenizer/tokenizer.json": {
+      "pass": true,
+      "detail": "0.011 GB"
+    },
+    "no_incomplete_downloads": {
+      "pass": true,
+      "detail": "0"
+    },
+    "mps_built": {
+      "pass": true,
+      "detail": null
+    },
+    "mps_available": {
+      "pass": true,
+      "detail": null
+    },
+    "cuda_absent": {
+      "pass": true,
+      "detail": "torch.version.cuda=None"
+    },
+    "mps_matmul_finite": {
+      "pass": true,
+      "detail": null
+    },
+    "pipeline_loaded": {
+      "pass": true,
+      "detail": "30.38s"
+    },
+    "device_is_requested": {
+      "pass": true,
+      "detail": "pipe.device=mps"
+    },
+    "dtype_is_requested": {
+      "pass": true,
+      "detail": "pipe.dtype=torch.bfloat16"
+    },
+    "sample_rate_48k": {
+      "pass": true,
+      "detail": "48000"
+    },
+    "max_inference_seconds": {
+      "pass": true,
+      "detail": "30"
+    },
+    "components_found": {
+      "pass": true,
+      "detail": "3 modules, 3508.2M params"
+    },
+    "all_on_device": {
+      "pass": true,
+      "detail": "mps"
+    },
+    "no_unexpected_dtype": {
+      "pass": true,
+      "detail": "ok"
+    },
+    "no_nan_inf_in_weights": {
+      "pass": true,
+      "detail": "clean"
+    },
+    "scheduler_present": {
+      "pass": true,
+      "detail": "FlowMatchScheduler"
+    },
+    "engine_present": {
+      "pass": true,
+      "detail": "WanAudioPipeline"
+    },
+    "callable": {
+      "pass": true,
+      "detail": "no denoising invoked"
+    },
+    "cuda_never_initialized": {
+      "pass": true,
+      "detail": null
+    },
+    "not_loaded:flash_attn": {
+      "pass": true,
+      "detail": null
+    },
+    "not_loaded:xformers": {
+      "pass": true,
+      "detail": null
+    },
+    "not_loaded:triton": {
+      "pass": true,
+      "detail": null
+    },
+    "not_loaded:bitsandbytes": {
+      "pass": true,
+      "detail": null
+    }
+  },
+  "warnings": [
+    "`torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`."
+  ],
+  "environment": {
+    "os": "Darwin 26.2 (25.2.0)",
+    "arch": "arm64",
+    "python": "3.12.13",
+    "python_executable": "/Users/bilalashfaque/Desktop/Silent-Video-Project/Module3_Fresh/moss/venv-moss/bin/python",
+    "torch": "2.9.1",
+    "torch_cuda_build": null,
+    "TORCHDYNAMO_DISABLE": "1"
+  },
+  "memory_before": {
+    "used_gb": 5.062,
+    "available_gb": 7.026,
+    "swap_gb": 1.452
+  },
+  "checkpoints": {
+    "transformer/diffusion_pytorch_model.safetensors": {
+      "bytes": 5664274560,
+      "gb": 5.664
+    },
+    "text_encoder/model-00001-of-00002.safetensors": {
+      "bytes": 3441185608,
+      "gb": 3.441
+    },
+    "text_encoder/model-00002-of-00002.safetensors": {
+      "bytes": 622329984,
+      "gb": 0.622
+    },
+    "vae/vae_128d_48k.pth": {
+      "bytes": 1486465965,
+      "gb": 1.486
+    },
+    "model_index.json": {
+      "bytes": 504,
+      "gb": 0.0
+    },
+    "tokenizer/tokenizer.json": {
+      "bytes": 11422654,
+      "gb": 0.011
+    }
+  },
+  "checkpoint_total_gb": 11.23,
+  "mps_recommended_max_memory_gb": 11.84,
+  "memory_after_load": {
+    "used_gb": 11.007,
+    "available_gb": 5.048,
+    "swap_gb": 11.251
+  },
+  "load_seconds": 30.38,
+  "components": {
+    "dit": {
+      "params_M": 1416.05,
+      "dtypes": [
+        "torch.float32"
+      ],
+      "devices": [
+        "mps"
+      ],
+      "nonfinite_tensors": 0
+    },
+    "text_encoder": {
+      "params_M": 1720.57,
+      "dtypes": [
+        "torch.bfloat16"
+      ],
+      "devices": [
+        "mps"
+      ],
+      "nonfinite_tensors": 0
+    },
+    "vae": {
+      "params_M": 371.59,
+      "dtypes": [
+        "torch.float32"
+      ],
+      "devices": [
+        "mps"
+      ],
+      "nonfinite_tensors": 0
+    }
+  },
+  "total_params_M": 3508.21,
+  "memory_peak_note": "measured at load; no denoising performed",
+  "failed_checks": [],
+  "result": "PASS"
+}

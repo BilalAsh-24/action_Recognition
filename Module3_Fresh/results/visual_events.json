@@ -1,0 +1,101 @@
+{
+  "diagnostics": {
+    "frames": 240,
+    "fps": 24.0,
+    "grid": [
+      320,
+      180
+    ],
+    "motion_all_mean": 0.7794832897062103,
+    "motion_by_action": {
+      "stand": {
+        "all": 1.195,
+        "feet": 1.7084,
+        "head": 0.7296,
+        "table": 1.599
+      },
+      "walk around table": {
+        "all": 1.3577,
+        "feet": 1.7112,
+        "head": 0.9585,
+        "table": 1.882
+      },
+      "pick up cup": {
+        "all": 0.9353,
+        "feet": 0.9536,
+        "head": 0.8453,
+        "table": 1.272
+      },
+      "drink from cup": {
+        "all": 0.277,
+        "feet": 0.1452,
+        "head": 0.3865,
+        "table": 0.2467
+      },
+      "place cup on table": {
+        "all": 0.672,
+        "feet": 0.4458,
+        "head": 0.8014,
+        "table": 0.807
+      }
+    }
+  },
+  "events": [
+    {
+      "action": "walk around table",
+      "kind": "foot_contact",
+      "t_s": 0.4583333333333333,
+      "confidence": "high",
+      "basis": "leg-swing peak (prominence>=0.304) resolved to the following minimum = foot plant"
+    },
+    {
+      "action": "walk around table",
+      "kind": "foot_contact",
+      "t_s": 1.0833333333333333,
+      "confidence": "high",
+      "basis": "leg-swing peak (prominence>=0.304) resolved to the following minimum = foot plant"
+    },
+    {
+      "action": "walk around table",
+      "kind": "foot_contact",
+      "t_s": 1.6666666666666667,
+      "confidence": "high",
+      "basis": "leg-swing peak (prominence>=0.304) resolved to the following minimum = foot plant"
+    },
+    {
+      "action": "walk around table",
+      "kind": "foot_contact",
+      "t_s": 2.2083333333333335,
+      "confidence": "high",
+      "basis": "leg-swing peak (prominence>=0.304) resolved to the following minimum = foot plant"
+    },
+    {
+      "action": "pick up cup",
+      "kind": "lift",
+      "t_s": 2.5416666666666665,
+      "confidence": "medium",
+      "basis": "first table-region motion peak = mug lifted (localised for metadata only)"
+    },
+    {
+      "action": "drink from cup",
+      "kind": "sip_hold",
+      "t_s": 6.625,
+      "confidence": "medium",
+      "basis": "sustained low head-region motion = mug held at lips"
+    },
+    {
+      "action": "drink from cup",
+      "kind": "sip_hold",
+      "t_s": 7.791666666666667,
+      "confidence": "medium",
+      "basis": "sustained low head-region motion = mug held at lips"
+    },
+    {
+      "action": "place cup on table",
+      "kind": "mug_table_contact",
+      "t_s": 9.833333333333334,
+      "confidence": "medium",
+      "basis": "final table-region motion peak resolved to rest = mug meets table"
+    }
+  ]
+}

@@ -1,0 +1,1724 @@
+{
+  "file": "audio/generated/cup_pickup_moss_v2_seed42.wav",
+  "basic": {
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 10.0,
+    "samples": 480000,
+    "rms": 0.0003652244818761923,
+    "rms_dbfs": -68.75,
+    "peak": 0.000823974609375,
+    "peak_dbfs": -61.68,
+    "crest_db": 7.07,
+    "clipped_samples": 0,
+    "nan": 0,
+    "inf": 0,
+    "all_finite": true,
+    "effective_bits_used": 5.8
+  },
+  "detection": {
+    "candidates": 83,
+    "kept": 83,
+    "min_gap_s": 0.08,
+    "gate_db": 25
+  },
+  "events": [
+    {
+      "t_s": 0.0267,
+      "peak": 0.000484,
+      "peak_dbfs": -66.3,
+      "attack_ms": 58.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5266.0,
+      "flatness": 0.0063,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 0.1547,
+      "peak": 0.00048,
+      "peak_dbfs": -66.4,
+      "attack_ms": 29.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5377.0,
+      "flatness": 0.0064,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 0.2667,
+      "peak": 0.000455,
+      "peak_dbfs": -66.8,
+      "attack_ms": 67.1,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5345.0,
+      "flatness": 0.0062,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        70.0
+      ],
+      "b_0_200": 96.4,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 0.432,
+      "peak": 0.000477,
+      "peak_dbfs": -66.4,
+      "attack_ms": 67.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5297.0,
+      "flatness": 0.006,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 0.5653,
+      "peak": 0.000471,
+      "peak_dbfs": -66.5,
+      "attack_ms": 150.0,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5330.0,
+      "flatness": 0.0062,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 0.7093,
+      "peak": 0.000479,
+      "peak_dbfs": -66.4,
+      "attack_ms": 208.3,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5281.0,
+      "flatness": 0.0061,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 0.912,
+      "peak": 0.00048,
+      "peak_dbfs": -66.4,
+      "attack_ms": 38.6,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5259.0,
+      "flatness": 0.0061,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.4,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.4,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 1.0293,
+      "peak": 0.000475,
+      "peak_dbfs": -66.5,
+      "attack_ms": 96.1,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5252.0,
+      "flatness": 0.006,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.5
+    },
+    {
+      "t_s": 1.1307,
+      "peak": 0.000482,
+      "peak_dbfs": -66.3,
+      "attack_ms": 77.4,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5216.0,
+      "flatness": 0.0057,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.7,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.5
+    },
+    {
+      "t_s": 1.248,
+      "peak": 0.000468,
+      "peak_dbfs": -66.6,
+      "attack_ms": 104.0,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5342.0,
+      "flatness": 0.006,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.4,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 1.3493,
+      "peak": 0.000484,
+      "peak_dbfs": -66.3,
+      "attack_ms": 84.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5287.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 1.4347,
+      "peak": 0.000465,
+      "peak_dbfs": -66.6,
+      "attack_ms": 0.0,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5282.0,
+      "flatness": 0.0068,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        94.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.6,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 1.5413,
+      "peak": 0.000482,
+      "peak_dbfs": -66.3,
+      "attack_ms": 93.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5322.0,
+      "flatness": 0.0064,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 1.6907,
+      "peak": 0.000477,
+      "peak_dbfs": -66.4,
+      "attack_ms": 35.1,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5289.0,
+      "flatness": 0.0061,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        70.0
+      ],
+      "b_0_200": 96.4,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.4,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 1.8027,
+      "peak": 0.00048,
+      "peak_dbfs": -66.4,
+      "attack_ms": 46.0,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5254.0,
+      "flatness": 0.0068,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.7,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 1.9093,
+      "peak": 0.000443,
+      "peak_dbfs": -67.1,
+      "attack_ms": 65.3,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5360.0,
+      "flatness": 0.0065,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 2.0,
+      "peak": 0.000472,
+      "peak_dbfs": -66.5,
+      "attack_ms": 125.0,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5338.0,
+      "flatness": 0.0063,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 2.1867,
+      "peak": 0.000462,
+      "peak_dbfs": -66.7,
+      "attack_ms": 13.1,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5385.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 2.3307,
+      "peak": 0.000444,
+      "peak_dbfs": -67.1,
+      "attack_ms": 103.1,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5293.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.7,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 2.432,
+      "peak": 0.000499,
+      "peak_dbfs": -66.0,
+      "attack_ms": 92.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5343.0,
+      "flatness": 0.0064,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 2.5547,
+      "peak": 0.000455,
+      "peak_dbfs": -66.8,
+      "attack_ms": 118.7,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5356.0,
+      "flatness": 0.0064,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 2.672,
+      "peak": 0.000464,
+      "peak_dbfs": -66.7,
+      "attack_ms": 43.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5298.0,
+      "flatness": 0.0062,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.6,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 2.784,
+      "peak": 0.000465,
+      "peak_dbfs": -66.7,
+      "attack_ms": 156.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5368.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 2.9493,
+      "peak": 0.000466,
+      "peak_dbfs": -66.6,
+      "attack_ms": 125.4,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5391.0,
+      "flatness": 0.0064,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 3.0933,
+      "peak": 0.000465,
+      "peak_dbfs": -66.6,
+      "attack_ms": 130.0,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5296.0,
+      "flatness": 0.0065,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 3.2107,
+      "peak": 0.000473,
+      "peak_dbfs": -66.5,
+      "attack_ms": 45.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5341.0,
+      "flatness": 0.0062,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 3.3547,
+      "peak": 0.000491,
+      "peak_dbfs": -66.2,
+      "attack_ms": 69.2,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5293.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 3.456,
+      "peak": 0.000454,
+      "peak_dbfs": -66.9,
+      "attack_ms": 76.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5265.0,
+      "flatness": 0.006,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.4,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 3.568,
+      "peak": 0.000436,
+      "peak_dbfs": -67.2,
+      "attack_ms": 148.4,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5372.0,
+      "flatness": 0.0068,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.7,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 3.7333,
+      "peak": 0.000436,
+      "peak_dbfs": -67.2,
+      "attack_ms": 31.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5344.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 3.84,
+      "peak": 0.000457,
+      "peak_dbfs": -66.8,
+      "attack_ms": 80.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5320.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.6,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 3.9307,
+      "peak": 0.000485,
+      "peak_dbfs": -66.3,
+      "attack_ms": 94.2,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5323.0,
+      "flatness": 0.0065,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.5
+    },
+    {
+      "t_s": 4.048,
+      "peak": 0.000464,
+      "peak_dbfs": -66.7,
+      "attack_ms": 106.3,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5400.0,
+      "flatness": 0.0072,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 95.9,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.7,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 4.176,
+      "peak": 0.000483,
+      "peak_dbfs": -66.3,
+      "attack_ms": 46.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5380.0,
+      "flatness": 0.007,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.6,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 4.2667,
+      "peak": 0.000458,
+      "peak_dbfs": -66.8,
+      "attack_ms": 50.2,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5324.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.7,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 4.3893,
+      "peak": 0.000444,
+      "peak_dbfs": -67.1,
+      "attack_ms": 83.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5346.0,
+      "flatness": 0.0064,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 4.5013,
+      "peak": 0.000494,
+      "peak_dbfs": -66.1,
+      "attack_ms": 113.3,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5339.0,
+      "flatness": 0.0064,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.4,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 4.64,
+      "peak": 0.000511,
+      "peak_dbfs": -65.8,
+      "attack_ms": 24.7,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5291.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 4.7467,
+      "peak": 0.000462,
+      "peak_dbfs": -66.7,
+      "attack_ms": 19.6,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5379.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        70.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.7,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 4.848,
+      "peak": 0.000442,
+      "peak_dbfs": -67.1,
+      "attack_ms": 92.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5356.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 4.9547,
+      "peak": 0.000466,
+      "peak_dbfs": -66.6,
+      "attack_ms": 27.6,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5321.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        70.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 5.0507,
+      "peak": 0.000505,
+      "peak_dbfs": -65.9,
+      "attack_ms": 23.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5282.0,
+      "flatness": 0.0068,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 5.168,
+      "peak": 0.000446,
+      "peak_dbfs": -67.0,
+      "attack_ms": 98.1,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5394.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 5.2693,
+      "peak": 0.000449,
+      "peak_dbfs": -67.0,
+      "attack_ms": 87.7,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5386.0,
+      "flatness": 0.007,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.0,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.7,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 5.3707,
+      "peak": 0.00051,
+      "peak_dbfs": -65.8,
+      "attack_ms": 85.7,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5360.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 5.4827,
+      "peak": 0.000493,
+      "peak_dbfs": -66.1,
+      "attack_ms": 141.0,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5355.0,
+      "flatness": 0.0063,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 5.6373,
+      "peak": 0.000483,
+      "peak_dbfs": -66.3,
+      "attack_ms": 3.4,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5345.0,
+      "flatness": 0.0061,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 5.8347,
+      "peak": 0.000451,
+      "peak_dbfs": -66.9,
+      "attack_ms": 79.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5359.0,
+      "flatness": 0.0068,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 5.952,
+      "peak": 0.000493,
+      "peak_dbfs": -66.1,
+      "attack_ms": 128.6,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5296.0,
+      "flatness": 0.0065,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 6.0853,
+      "peak": 0.000454,
+      "peak_dbfs": -66.9,
+      "attack_ms": 72.1,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5266.0,
+      "flatness": 0.0058,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.7,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.4,
+      "b_5k_15k": 1.4
+    },
+    {
+      "t_s": 6.2187,
+      "peak": 0.000459,
+      "peak_dbfs": -66.8,
+      "attack_ms": 64.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5350.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.4,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 6.3147,
+      "peak": 0.000461,
+      "peak_dbfs": -66.7,
+      "attack_ms": 59.2,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5274.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        94.0
+      ],
+      "b_0_200": 95.9,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.8,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 6.432,
+      "peak": 0.000455,
+      "peak_dbfs": -66.8,
+      "attack_ms": 102.4,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5210.0,
+      "flatness": 0.006,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 6.528,
+      "peak": 0.000457,
+      "peak_dbfs": -66.8,
+      "attack_ms": 54.4,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5369.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 6.6293,
+      "peak": 0.000464,
+      "peak_dbfs": -66.7,
+      "attack_ms": 91.6,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5306.0,
+      "flatness": 0.007,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 95.8,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.7,
+      "b_5k_15k": 1.9
+    },
+    {
+      "t_s": 6.72,
+      "peak": 0.000464,
+      "peak_dbfs": -66.7,
+      "attack_ms": 0.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5340.0,
+      "flatness": 0.0066,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        70.0
+      ],
+      "b_0_200": 96.0,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 6.8533,
+      "peak": 0.000461,
+      "peak_dbfs": -66.7,
+      "attack_ms": 87.0,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5286.0,
+      "flatness": 0.0061,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.4,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 6.9653,
+      "peak": 0.000452,
+      "peak_dbfs": -66.9,
+      "attack_ms": 109.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5285.0,
+      "flatness": 0.0069,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 7.0613,
+      "peak": 0.000452,
+      "peak_dbfs": -66.9,
+      "attack_ms": 13.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5311.0,
+      "flatness": 0.0064,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.4,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 7.1893,
+      "peak": 0.000459,
+      "peak_dbfs": -66.8,
+      "attack_ms": 142.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5350.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 7.328,
+      "peak": 0.000459,
+      "peak_dbfs": -66.8,
+      "attack_ms": 4.2,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5271.0,
+      "flatness": 0.0065,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.5
+    },
+    {
+      "t_s": 7.4133,
+      "peak": 0.000437,
+      "peak_dbfs": -67.2,
+      "attack_ms": 34.2,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5343.0,
+      "flatness": 0.0064,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 7.5307,
+      "peak": 0.000485,
+      "peak_dbfs": -66.3,
+      "attack_ms": 33.7,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5313.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.7,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 7.6533,
+      "peak": 0.000481,
+      "peak_dbfs": -66.4,
+      "attack_ms": 113.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5341.0,
+      "flatness": 0.0065,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        94.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 7.7653,
+      "peak": 0.000481,
+      "peak_dbfs": -66.4,
+      "attack_ms": 1.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5236.0,
+      "flatness": 0.0065,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.6,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 7.8507,
+      "peak": 0.000476,
+      "peak_dbfs": -66.4,
+      "attack_ms": 80.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5259.0,
+      "flatness": 0.0063,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.4,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 7.9787,
+      "peak": 0.000471,
+      "peak_dbfs": -66.5,
+      "attack_ms": 3.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5365.0,
+      "flatness": 0.0061,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.6,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 8.1707,
+      "peak": 0.000466,
+      "peak_dbfs": -66.6,
+      "attack_ms": 110.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5271.0,
+      "flatness": 0.0059,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        70.0
+      ],
+      "b_0_200": 96.4,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 8.2933,
+      "peak": 0.000461,
+      "peak_dbfs": -66.7,
+      "attack_ms": 88.4,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5297.0,
+      "flatness": 0.0062,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 8.4267,
+      "peak": 0.00045,
+      "peak_dbfs": -66.9,
+      "attack_ms": 66.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5319.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 8.5227,
+      "peak": 0.000477,
+      "peak_dbfs": -66.4,
+      "attack_ms": 125.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5354.0,
+      "flatness": 0.0065,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 8.656,
+      "peak": 0.000479,
+      "peak_dbfs": -66.4,
+      "attack_ms": 26.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5282.0,
+      "flatness": 0.0061,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 8.7467,
+      "peak": 0.000488,
+      "peak_dbfs": -66.2,
+      "attack_ms": 18.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5255.0,
+      "flatness": 0.006,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        117.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.5
+    },
+    {
+      "t_s": 8.8693,
+      "peak": 0.000487,
+      "peak_dbfs": -66.2,
+      "attack_ms": 88.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5309.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        94.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 9.0027,
+      "peak": 0.000499,
+      "peak_dbfs": -66.0,
+      "attack_ms": 54.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5301.0,
+      "flatness": 0.0061,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.5,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 9.1147,
+      "peak": 0.000454,
+      "peak_dbfs": -66.9,
+      "attack_ms": 42.1,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5375.0,
+      "flatness": 0.0067,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 9.2107,
+      "peak": 0.000492,
+      "peak_dbfs": -66.2,
+      "attack_ms": 170.3,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5318.0,
+      "flatness": 0.006,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.4,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.6
+    },
+    {
+      "t_s": 9.3707,
+      "peak": 0.000492,
+      "peak_dbfs": -66.2,
+      "attack_ms": 10.3,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5168.0,
+      "flatness": 0.0057,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.7,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.3
+    },
+    {
+      "t_s": 9.4613,
+      "peak": 0.000466,
+      "peak_dbfs": -66.6,
+      "attack_ms": 37.6,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5392.0,
+      "flatness": 0.0068,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.1,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.5,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 9.5893,
+      "peak": 0.000481,
+      "peak_dbfs": -66.3,
+      "attack_ms": 59.3,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5378.0,
+      "flatness": 0.0063,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.3,
+      "b_200_1k": 0.4,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.7
+    },
+    {
+      "t_s": 9.7973,
+      "peak": 0.000455,
+      "peak_dbfs": -66.8,
+      "attack_ms": 18.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5350.0,
+      "flatness": 0.0071,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 96.2,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.6,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 9.8827,
+      "peak": 0.000488,
+      "peak_dbfs": -66.2,
+      "attack_ms": 108.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5373.0,
+      "flatness": 0.0091,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 95.7,
+      "b_200_1k": 0.5,
+      "b_1k_5k": 1.9,
+      "b_5k_15k": 1.9
+    },
+    {
+      "t_s": 9.9947,
+      "peak": 0.000306,
+      "peak_dbfs": -70.3,
+      "attack_ms": 0.1,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 6296.0,
+      "flatness": 0.0601,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 59.1,
+      "b_200_1k": 4.2,
+      "b_1k_5k": 13.3,
+      "b_5k_15k": 23.0
+    }
+  ],
+  "event_count": 83,
+  "timing": {
+    "ioi_s": [
+      0.128,
+      0.112,
+      0.165,
+      0.133,
+      0.144,
+      0.203,
+      0.117,
+      0.101,
+      0.117,
+      0.101,
+      0.085,
+      0.107,
+      0.149,
+      0.112,
+      0.107,
+      0.091,
+      0.187,
+      0.144,
+      0.101,
+      0.123,
+      0.117,
+      0.112,
+      0.165,
+      0.144,
+      0.117,
+      0.144,
+      0.101,
+      0.112,
+      0.165,
+      0.107,
+      0.091,
+      0.117,
+      0.128,
+      0.091,
+      0.123,
+      0.112,
+      0.139,
+      0.107,
+      0.101,
+      0.107,
+      0.096,
+      0.117,
+      0.101,
+      0.101,
+      0.112,
+      0.155,
+      0.197,
+      0.117,
+      0.133,
+      0.133,
+      0.096,
+      0.117,
+      0.096,
+      0.101,
+      0.091,
+      0.133,
+      0.112,
+      0.096,
+      0.128,
+      0.139,
+      0.085,
+      0.117,
+      0.123,
+      0.112,
+      0.085,
+      0.128,
+      0.192,
+      0.123,
+      0.133,
+      0.096,
+      0.133,
+      0.091,
+      0.123,
+      0.133,
+      0.112,
+      0.096,
+      0.16,
+      0.091,
+      0.128,
+      0.208,
+      0.085,
+      0.112
+    ],
+    "ioi_mean": 0.122,
+    "span_s": 9.968
+  },
+  "background": {
+    "bg_fraction_of_file": 0.0,
+    "bg_rms": 0.0,
+    "bg_rms_dbfs": null,
+    "event_to_bg_ratio_db": null,
+    "pct_below_-20db": 0.0,
+    "pct_below_-40db": 0.0
+  },
+  "character": {
+    "spectral_flatness": 0.00601,
+    "frame_self_similarity": 0.9944,
+    "dyn_range_p95_p5_db": 1.06,
+    "harmonic_ratio_hpss": 0.9501,
+    "envelope_mod_peak_hz": 2.3,
+    "energy_0_200": 96.47,
+    "energy_200_1k": 0.34,
+    "energy_1k_5k": 1.5,
+    "energy_5k_15k": 1.62,
+    "per_second_rms": [
+      0.000372,
+      0.000369,
+      0.000363,
+      0.000364,
+      0.000363,
+      0.000361,
+      0.000362,
+      0.000365,
+      0.000368,
+      0.000363
+    ]
+  }
+}

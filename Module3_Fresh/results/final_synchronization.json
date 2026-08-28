@@ -1,0 +1,344 @@
+{
+  "module": "Module 3 \u2014 Silent Video to Synchronised Foley",
+  "built": "2026-08-25",
+  "source_video": {
+    "path": "input/test_video.mp4",
+    "original_path": "/Users/bilalashfaque/Desktop/Silent-Video-Project/03-FoleyCrafter-Test/action-recognition/module2_test_video.mp4",
+    "sha256": "a620ee5820ab9dfc4d538f9cdc4ebabe3614045f3d178dbdd658afb0ce7aabc8",
+    "duration_s": 10.005,
+    "resolution": "1280x720",
+    "fps": "24/1",
+    "frames": 240,
+    "unchanged": true
+  },
+  "module2_timeline": [
+    {
+      "action": "stand",
+      "start_s": 0.0,
+      "end_s": 1.5,
+      "status": "suspect"
+    },
+    {
+      "action": "walk around table",
+      "start_s": 1.5,
+      "end_s": 2.5,
+      "status": "suspect"
+    },
+    {
+      "action": "pick up cup",
+      "start_s": 2.5,
+      "end_s": 5.5,
+      "status": "confirmed"
+    },
+    {
+      "action": "drink from cup",
+      "start_s": 5.5,
+      "end_s": 8.5,
+      "status": "confirmed"
+    },
+    {
+      "action": "place cup on table",
+      "start_s": 8.5,
+      "end_s": 10.0,
+      "status": "suspect"
+    }
+  ],
+  "visual_events": [
+    {
+      "action": "walk around table",
+      "kind": "foot_contact",
+      "t_s": 2.2916666666666665,
+      "confidence": "medium",
+      "basis": "lower-body motion peak resolved to the following minimum (foot plant)"
+    },
+    {
+      "action": "pick up cup",
+      "kind": "lift",
+      "t_s": 2.5416666666666665,
+      "confidence": "medium",
+      "basis": "first table-region motion peak = mug lifted (localised for metadata only)"
+    },
+    {
+      "action": "drink from cup",
+      "kind": "sip_hold",
+      "t_s": 6.583333333333333,
+      "confidence": "medium",
+      "basis": "sustained low head-region motion = mug held at lips"
+    },
+    {
+      "action": "drink from cup",
+      "kind": "sip_hold",
+      "t_s": 7.791666666666667,
+      "confidence": "medium",
+      "basis": "sustained low head-region motion = mug held at lips"
+    },
+    {
+      "action": "place cup on table",
+      "kind": "mug_table_contact",
+      "t_s": 9.833333333333334,
+      "confidence": "medium",
+      "basis": "final table-region motion peak resolved to rest = mug meets table"
+    }
+  ],
+  "visual_motion_diagnostics": {
+    "stand": {
+      "all": 1.106,
+      "feet": 1.5973,
+      "head": 0.6459,
+      "table": 1.4438
+    },
+    "walk around table": {
+      "all": 1.2091,
+      "feet": 1.5763,
+      "head": 0.8353,
+      "table": 1.6404
+    },
+    "pick up cup": {
+      "all": 0.8033,
+      "feet": 0.889,
+      "head": 0.6911,
+      "table": 1.1264
+    },
+    "drink from cup": {
+      "all": 0.2255,
+      "feet": 0.1298,
+      "head": 0.3122,
+      "table": 0.2077
+    },
+    "place cup on table": {
+      "all": 0.5733,
+      "feet": 0.4393,
+      "head": 0.6723,
+      "table": 0.7225
+    }
+  },
+  "foley_assets": {
+    "walking": {
+      "path": "audio/generated/walking_moss_v1_seed42.wav",
+      "duration_s": 10.0,
+      "detected_steps": [
+        0.0,
+        0.293,
+        0.544,
+        0.811,
+        1.419,
+        1.92,
+        2.421,
+        3.259,
+        3.76,
+        4.283,
+        4.571,
+        5.072,
+        5.323,
+        5.573,
+        5.867,
+        6.368,
+        7.189,
+        7.691,
+        8.192,
+        8.443,
+        9.013
+      ]
+    },
+    "drinking": {
+      "path": "audio/generated/drinking_moss_v2_local_seed42.wav",
+      "duration_s": 10.0,
+      "selected_sip_segments": [
+        {
+          "src_s": 8.946,
+          "end_s": 9.646,
+          "wet_200_1k": 0.915
+        },
+        {
+          "src_s": 1.405,
+          "end_s": 2.105,
+          "wet_200_1k": 0.669
+        }
+      ]
+    },
+    "placement": {
+      "path": "audio/generated/cup_placement_foley_final.wav",
+      "duration_s": 0.4,
+      "derived_from": "cup_placement_moss_v1_seed42.wav",
+      "source_crop_s": [
+        6.15,
+        6.55
+      ]
+    }
+  },
+  "placements": [
+    {
+      "action": "walk around table",
+      "asset": "walking",
+      "index": null,
+      "module2_interval_s": [
+        1.5,
+        2.5
+      ],
+      "visual_event_s": 2.2917,
+      "visual_event_kind": "foot_contact",
+      "source_foley_start_s": 0.019,
+      "source_foley_end_s": 1.019,
+      "placed_video_start_s": 1.5,
+      "placed_video_end_s": 2.499979,
+      "synchronization_offset_s": 0.7917,
+      "raw_peak_dbfs": -11.39,
+      "target_peak_dbfs": -20.0,
+      "gain_applied_db": -8.61,
+      "gain_applied_linear": 0.37101,
+      "fade_in_ms": 8.0,
+      "fade_out_ms": 8.0,
+      "truncated_ms": 0.0,
+      "strategy": "continuous slice, shifted so a natural footstep lands on the visible foot-plant"
+    },
+    {
+      "action": "drink from cup",
+      "asset": "drinking",
+      "index": 1,
+      "module2_interval_s": [
+        5.5,
+        8.5
+      ],
+      "visual_event_s": 6.5833,
+      "visual_event_kind": "sip_hold",
+      "source_foley_start_s": 8.946,
+      "source_foley_end_s": 9.646,
+      "placed_video_start_s": 6.216208,
+      "placed_video_end_s": 6.916208,
+      "synchronization_offset_s": 0.3671,
+      "raw_peak_dbfs": -26.18,
+      "target_peak_dbfs": -24.0,
+      "gain_applied_db": 2.18,
+      "gain_applied_linear": 1.28577,
+      "fade_in_ms": 8.0,
+      "fade_out_ms": 8.0,
+      "truncated_ms": 0.0,
+      "strategy": "isolated sip/swallow segment, onset aligned to the visible sip hold"
+    },
+    {
+      "action": "drink from cup",
+      "asset": "drinking",
+      "index": 2,
+      "module2_interval_s": [
+        5.5,
+        8.5
+      ],
+      "visual_event_s": 7.7917,
+      "visual_event_kind": "sip_hold",
+      "source_foley_start_s": 1.4047,
+      "source_foley_end_s": 2.1047,
+      "placed_video_start_s": 7.2565,
+      "placed_video_end_s": 7.9565,
+      "synchronization_offset_s": 0.5352,
+      "raw_peak_dbfs": -24.97,
+      "target_peak_dbfs": -24.0,
+      "gain_applied_db": 0.97,
+      "gain_applied_linear": 1.11879,
+      "fade_in_ms": 8.0,
+      "fade_out_ms": 8.0,
+      "truncated_ms": 0.0,
+      "strategy": "isolated sip/swallow segment, onset aligned to the visible sip hold"
+    },
+    {
+      "action": "place cup on table",
+      "asset": "placement",
+      "index": null,
+      "module2_interval_s": [
+        8.5,
+        10.0
+      ],
+      "visual_event_s": 9.8333,
+      "visual_event_kind": "mug_table_contact",
+      "source_foley_start_s": 0.0,
+      "source_foley_end_s": 0.4,
+      "placed_video_start_s": 9.698104,
+      "placed_video_end_s": 10.005,
+      "synchronization_offset_s": 0.1352,
+      "raw_peak_dbfs": -30.7,
+      "target_peak_dbfs": -18.0,
+      "gain_applied_db": 12.7,
+      "gain_applied_linear": 4.31511,
+      "fade_in_ms": 8.0,
+      "fade_out_ms": 8.0,
+      "truncated_ms": 93.1,
+      "strategy": "400 ms contact asset, attack aligned to the visible mug-table contact"
+    }
+  ],
+  "unavailable_foley": [
+    {
+      "action": "stand",
+      "interval_s": [
+        0.0,
+        1.5
+      ],
+      "visual_event_s": null,
+      "reason": "No sound event \u2014 standing still produces no Foley. Intentionally silent.",
+      "audio_written": false
+    },
+    {
+      "action": "pick up cup",
+      "interval_s": [
+        2.5,
+        5.5
+      ],
+      "visual_event_s": 2.5417,
+      "reason": "No approved Foley. Two MOSS generations (UNCERTAIN, FAIL) and an extraction study from the drinking asset (NOT VIABLE) were rejected. Left intentionally silent; not fabricated.",
+      "audio_written": false
+    }
+  ],
+  "mix_bus": {
+    "peak_before_dbfs": -18.0,
+    "headroom_ceiling_dbfs": -3.0,
+    "bus_gain_db": 0.0,
+    "peak_after_dbfs": -18.0,
+    "note": "bus gain applied only if the sum exceeded the ceiling"
+  },
+  "truncations": [
+    {
+      "action": "place cup on table",
+      "asset": "placement",
+      "truncated_samples": 4469,
+      "truncated_ms": 93.1,
+      "reason": "clip extends past end of video; tail faded out to preserve video duration"
+    }
+  ],
+  "audio": {
+    "sample_rate": 48000,
+    "channels": 1,
+    "subtype": "PCM_16",
+    "final_audio_duration_s": 10.005,
+    "peak_dbfs": -18.0,
+    "rms_dbfs": -48.01,
+    "clipping_check": {
+      "samples_at_or_over_1.0": 0,
+      "clipped": false
+    },
+    "nan_inf": {
+      "nan": 0,
+      "inf": 0
+    }
+  },
+  "final_video": {
+    "path": "output/final_silent_to_audio.mp4",
+    "duration_s": 10.0,
+    "video_duration_s": 10.0,
+    "audio_duration_s": 9.984,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000,
+    "video_stream_copied": true
+  },
+  "quality_gate": {
+    "result": "PASS",
+    "checks_passed": 15,
+    "checks_total": 15,
+    "failed": []
+  },
+  "output_hashes": {
+    "source_video": "a620ee5820ab9dfc4d538f9cdc4ebabe3614045f3d178dbdd658afb0ce7aabc8",
+    "final_mp4": "1f1c65c4a7162bffecede0a5f255902f8918bd871660e7a64765768c53467d00",
+    "mixed_wav": "f9333d2dbe065913bd81db95dfddf7797102889f91cb6a09288cd73963b9758a",
+    "drinking_moss_v2_local_seed42.wav": "a59f38c96bc15f6c63acd2081b6b1300c97f747dcf78de9917644254fb5e6a2e",
+    "walking_moss_v1_seed42.wav": "0eae125b00cdbec0a788fca3b3b53e4f8b04f56a88924ef96776fa731f986950"
+  }
+}

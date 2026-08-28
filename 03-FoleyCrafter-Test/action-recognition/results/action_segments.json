@@ -1,0 +1,281 @@
+{
+  "module": "temporal_action_recognition",
+  "model": "microsoft/xclip-base-patch16-zero-shot",
+  "device": "mps",
+  "video": "/Users/bilalashfaque/Desktop/Silent-Video-Project/03-FoleyCrafter-Test/test_video.mp4",
+  "duration": 1.293333,
+  "resolution": "1920x1080",
+  "codec": "hevc",
+  "fps_nominal": "30/1",
+  "fps_average": "300/11",
+  "frame_count": 40,
+  "frames_decoded": 38,
+  "audio_present": true,
+  "audio_used": false,
+  "vocabulary_size": 24,
+  "vocabulary": [
+    "opening a door",
+    "closing a door",
+    "locking a door",
+    "unlocking a door",
+    "knocking on a door",
+    "picking up an object",
+    "putting down an object",
+    "dropping an object",
+    "opening an object",
+    "closing an object",
+    "turning a handle",
+    "walking",
+    "running",
+    "jumping",
+    "clapping",
+    "sitting down",
+    "standing up",
+    "pouring liquid",
+    "drinking",
+    "filling a container",
+    "cutting",
+    "hammering",
+    "typing",
+    "writing"
+  ],
+  "window_duration": 1.0,
+  "stride": 0.0978,
+  "num_windows": 4,
+  "frames_per_window_fed_to_model": 32,
+  "decision_rules": {
+    "uniform_chance": 0.041667,
+    "min_conf_ratio": 3.0,
+    "min_conf_absolute": 0.125,
+    "margin_ratio": 1.25,
+    "smoothing_kernel": 3
+  },
+  "windows": [
+    {
+      "window": 1,
+      "start": 0.0,
+      "end": 1.0,
+      "raw_frames_in_window": 30,
+      "frames_fed": 32,
+      "top3": [
+        {
+          "action": "standing up",
+          "score": 0.262419
+        },
+        {
+          "action": "pouring liquid",
+          "score": 0.104222
+        },
+        {
+          "action": "jumping",
+          "score": 0.054365
+        }
+      ],
+      "verdict_before_smoothing": "standing up",
+      "passed_confidence_gate": true,
+      "passed_margin_gate": true,
+      "scores": {
+        "opening a door": 0.025158,
+        "closing a door": 0.036918,
+        "locking a door": 0.024315,
+        "unlocking a door": 0.024965,
+        "knocking on a door": 0.04477,
+        "picking up an object": 0.01626,
+        "putting down an object": 0.008457,
+        "dropping an object": 0.043217,
+        "opening an object": 0.014846,
+        "closing an object": 0.016677,
+        "turning a handle": 0.007779,
+        "walking": 0.039681,
+        "running": 0.041171,
+        "jumping": 0.054365,
+        "clapping": 0.041869,
+        "sitting down": 0.036476,
+        "standing up": 0.262419,
+        "pouring liquid": 0.104222,
+        "drinking": 0.008243,
+        "filling a container": 0.038502,
+        "cutting": 0.029465,
+        "hammering": 0.009012,
+        "typing": 0.040949,
+        "writing": 0.030265
+      },
+      "verdict_after_smoothing": "standing up"
+    },
+    {
+      "window": 2,
+      "start": 0.0978,
+      "end": 1.0978,
+      "raw_frames_in_window": 30,
+      "frames_fed": 32,
+      "top3": [
+        {
+          "action": "standing up",
+          "score": 0.261682
+        },
+        {
+          "action": "pouring liquid",
+          "score": 0.096316
+        },
+        {
+          "action": "jumping",
+          "score": 0.055511
+        }
+      ],
+      "verdict_before_smoothing": "standing up",
+      "passed_confidence_gate": true,
+      "passed_margin_gate": true,
+      "scores": {
+        "opening a door": 0.024679,
+        "closing a door": 0.035822,
+        "locking a door": 0.023658,
+        "unlocking a door": 0.024797,
+        "knocking on a door": 0.045537,
+        "picking up an object": 0.0164,
+        "putting down an object": 0.008325,
+        "dropping an object": 0.046194,
+        "opening an object": 0.014231,
+        "closing an object": 0.015544,
+        "turning a handle": 0.007127,
+        "walking": 0.037368,
+        "running": 0.04245,
+        "jumping": 0.055511,
+        "clapping": 0.052418,
+        "sitting down": 0.037631,
+        "standing up": 0.261682,
+        "pouring liquid": 0.096316,
+        "drinking": 0.008318,
+        "filling a container": 0.034067,
+        "cutting": 0.027759,
+        "hammering": 0.010029,
+        "typing": 0.044358,
+        "writing": 0.029779
+      },
+      "verdict_after_smoothing": "standing up"
+    },
+    {
+      "window": 3,
+      "start": 0.1956,
+      "end": 1.1956,
+      "raw_frames_in_window": 30,
+      "frames_fed": 32,
+      "top3": [
+        {
+          "action": "standing up",
+          "score": 0.275918
+        },
+        {
+          "action": "pouring liquid",
+          "score": 0.085303
+        },
+        {
+          "action": "clapping",
+          "score": 0.055221
+        }
+      ],
+      "verdict_before_smoothing": "standing up",
+      "passed_confidence_gate": true,
+      "passed_margin_gate": true,
+      "scores": {
+        "opening a door": 0.027432,
+        "closing a door": 0.037962,
+        "locking a door": 0.024986,
+        "unlocking a door": 0.025734,
+        "knocking on a door": 0.04954,
+        "picking up an object": 0.01677,
+        "putting down an object": 0.008661,
+        "dropping an object": 0.044305,
+        "opening an object": 0.01566,
+        "closing an object": 0.015667,
+        "turning a handle": 0.00794,
+        "walking": 0.029627,
+        "running": 0.035502,
+        "jumping": 0.052915,
+        "clapping": 0.055221,
+        "sitting down": 0.043531,
+        "standing up": 0.275918,
+        "pouring liquid": 0.085303,
+        "drinking": 0.008927,
+        "filling a container": 0.031836,
+        "cutting": 0.027604,
+        "hammering": 0.010073,
+        "typing": 0.043906,
+        "writing": 0.02498
+      },
+      "verdict_after_smoothing": "standing up"
+    },
+    {
+      "window": 4,
+      "start": 0.2933,
+      "end": 1.2933,
+      "raw_frames_in_window": 29,
+      "frames_fed": 32,
+      "top3": [
+        {
+          "action": "standing up",
+          "score": 0.304941
+        },
+        {
+          "action": "pouring liquid",
+          "score": 0.088033
+        },
+        {
+          "action": "clapping",
+          "score": 0.059212
+        }
+      ],
+      "verdict_before_smoothing": "standing up",
+      "passed_confidence_gate": true,
+      "passed_margin_gate": true,
+      "scores": {
+        "opening a door": 0.026627,
+        "closing a door": 0.036187,
+        "locking a door": 0.024131,
+        "unlocking a door": 0.0237,
+        "knocking on a door": 0.047607,
+        "picking up an object": 0.015217,
+        "putting down an object": 0.008611,
+        "dropping an object": 0.041652,
+        "opening an object": 0.014759,
+        "closing an object": 0.014269,
+        "turning a handle": 0.007579,
+        "walking": 0.025367,
+        "running": 0.033055,
+        "jumping": 0.050438,
+        "clapping": 0.059212,
+        "sitting down": 0.045453,
+        "standing up": 0.304941,
+        "pouring liquid": 0.088033,
+        "drinking": 0.00804,
+        "filling a container": 0.028826,
+        "cutting": 0.027033,
+        "hammering": 0.00993,
+        "typing": 0.03753,
+        "writing": 0.021805
+      },
+      "verdict_after_smoothing": "standing up"
+    }
+  ],
+  "segments": [
+    {
+      "action": "standing up",
+      "category": "body",
+      "start": 0.0,
+      "end": 1.2933,
+      "confidence": 0.27624,
+      "n_windows": 4,
+      "status": "candidate"
+    }
+  ],
+  "timing": {
+    "model_load_time": 6.284,
+    "frame_extraction_time": 0.3,
+    "total_inference_time": 2.871,
+    "avg_inference_time_per_window": 0.718,
+    "total_wall_time": 10.323
+  },
+  "memory": {
+    "peak_used_gb": 9.342,
+    "peak_swap_gb": 2.018
+  }
+}

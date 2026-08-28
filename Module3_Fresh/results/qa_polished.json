@@ -1,0 +1,96 @@
+{
+  "checks": {
+    "1_mp4_opens": {
+      "pass": true,
+      "detail": "2 streams"
+    },
+    "2_video_duration_preserved": {
+      "pass": true,
+      "detail": "10.005s -> 10.000s"
+    },
+    "3_video_stream_untouched": {
+      "pass": true,
+      "detail": "240 frames, stream-copied"
+    },
+    "4_audio_duration_matches": {
+      "pass": true,
+      "detail": "audio 9.984s vs video 10.000s"
+    },
+    "5_sample_rate_48k": {
+      "pass": true,
+      "detail": "48000 Hz"
+    },
+    "6_mono": {
+      "pass": true,
+      "detail": "1 channel"
+    },
+    "7_no_clipping": {
+      "pass": true,
+      "detail": "peak -6.00 dBFS"
+    },
+    "8_no_nan_inf": {
+      "pass": true,
+      "detail": "all finite"
+    },
+    "9_sync_walk": {
+      "pass": true,
+      "detail": "rendered [0.458, 1.063, 1.675, 2.221] vs visible [0.4583333333333333, 1.0833333333333333, 1.6666666666666667, 2.2083333333333335] -> ['-0ms', '-20ms', '+8ms', '+13ms']"
+    },
+    "9_sync_drink": {
+      "pass": true,
+      "detail": "rendered [6.638, 6.914, 7.803] vs visible [6.625, 7.791666666666667] -> ['+13ms', '+11ms']"
+    },
+    "9_sync_place": {
+      "pass": true,
+      "detail": "rendered [9.833] vs visible [9.833333333333334] -> ['-0ms']"
+    },
+    "10_no_edit_clicks": {
+      "pass": true,
+      "detail": "all 8 boundaries clean"
+    },
+    "11_no_bleed_into_silent_actions": {
+      "pass": true,
+      "detail": "clean"
+    },
+    "12_pickup_still_unavailable": {
+      "pass": true,
+      "detail": "silent, documented"
+    },
+    "13_not_over_compressed": {
+      "pass": true,
+      "detail": "limiter GR 0.0 dB, engaged=False"
+    },
+    "14_healthy_crest_factor": {
+      "pass": true,
+      "detail": "30.9 dB"
+    },
+    "15_original_video_unchanged": {
+      "pass": true,
+      "detail": "a620ee5820ab9dfc\u2026"
+    },
+    "16_locked_assets_unchanged": {
+      "pass": true,
+      "detail": "2 verified"
+    },
+    "17_originals_not_overwritten": {
+      "pass": true,
+      "detail": "v1 mix and v1 mp4 both still present"
+    }
+  },
+  "worst_sync_error_ms": 20.3,
+  "hashes": {
+    "source_video": "a620ee5820ab9dfc4d538f9cdc4ebabe3614045f3d178dbdd658afb0ce7aabc8",
+    "polished_mp4": "1d4f974748f02c010a3480d49e9ffc4c9686525562f927c61685382430b79864",
+    "polished_wav": "3e66a9c3272129a72f1a1c6d15a86d6d9155c6fcd2781377dc904e29f78bbc17",
+    "drinking_moss_v2_local_seed42.wav": "a59f38c96bc15f6c63acd2081b6b1300c97f747dcf78de9917644254fb5e6a2e",
+    "walking_moss_v1_seed42.wav": "0eae125b00cdbec0a788fca3b3b53e4f8b04f56a88924ef96776fa731f986950"
+  },
+  "audio": {
+    "peak_dbfs": -6.0,
+    "rms_dbfs": -36.87,
+    "crest_db": 30.87,
+    "duration_s": 10.005
+  },
+  "result": "PASS",
+  "failed": []
+}

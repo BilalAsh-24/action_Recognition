@@ -1,0 +1,11 @@
+RAW WINDOW PREDICTIONS
+
+0.00 ──────────────────── 0.50  pouring liquid         0.38
+0.25 ──────────────────── 0.75  pouring liquid         0.21
+0.50 ──────────────────── 1.00  pouring liquid         0.23
+0.75 ──────────────────── 1.25  pouring liquid         0.28
+0.79 ──────────────────── 1.29  pouring liquid         0.28
+
+FINAL SEGMENTS
+
+0.00 ──────────────────── 1.29  pouring liquid         0.28  [candidate]

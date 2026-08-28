@@ -1,0 +1,429 @@
+{
+  "module": "Module 3 \u2014 polished final",
+  "built": "2026-08-25",
+  "revision": "polished (v2)",
+  "changes_vs_v1": [
+    "walking foot-contact detector rebuilt: prominence-based, 320x180 grid, feet band 0.62-1.00",
+    "walking search span widened to the whole pre-cup region \u2014 the person is already walking during the interval Module 2 labelled 'stand' (which Module 2 itself flagged suspect)",
+    "four visible foot plants now detected (0.458 / 1.083 / 1.667 / 2.208 s) instead of one",
+    "onset detection changed from onset-STRENGTH peaks to true envelope ATTACK times",
+    "walking clip SHIFTED (never stretched); consecutive asset step-run matched to the visible gait",
+    "zero-crossing snapped cuts, 12 ms raised-cosine fades, per-clip DC removal",
+    "level balance by active-RMS instead of peak",
+    "transparent bus normalisation to -6 dBFS; safety limiter did not engage"
+  ],
+  "module2_boundary_note": "Module 2 resolved_actions were NOT modified. Its 'stand' 0.0-1.5 s segment is flagged status=suspect with flag 'first_segment (window sees pre-action framing)'. Measured lower-body motion is 1.708 in 0.0-1.5 s vs 1.711 in the labelled walk interval, dropping to 0.954 only at the cup pick-up. Footstep audio therefore spans the visible walking, not the label.",
+  "source_video": {
+    "path": "input/test_video.mp4",
+    "sha256": "a620ee5820ab9dfc4d538f9cdc4ebabe3614045f3d178dbdd658afb0ce7aabc8",
+    "duration_s": 10.0,
+    "resolution": "1280x720",
+    "fps": "24/1",
+    "frames": 240,
+    "unchanged": true
+  },
+  "module2_timeline": [
+    {
+      "action": "stand",
+      "start_s": 0.0,
+      "end_s": 1.5,
+      "status": "suspect",
+      "flags": [
+        "single_window_support (1 window)",
+        "first_segment (window sees pre-action framing)"
+      ]
+    },
+    {
+      "action": "walk around table",
+      "start_s": 1.5,
+      "end_s": 2.5,
+      "status": "suspect",
+      "flags": [
+        "single_window_support (1 window)"
+      ]
+    },
+    {
+      "action": "pick up cup",
+      "start_s": 2.5,
+      "end_s": 5.5,
+      "status": "confirmed",
+      "flags": []
+    },
+    {
+      "action": "drink from cup",
+      "start_s": 5.5,
+      "end_s": 8.5,
+      "status": "confirmed",
+      "flags": []
+    },
+    {
+      "action": "place cup on table",
+      "start_s": 8.5,
+      "end_s": 10.0,
+      "status": "suspect",
+      "flags": [
+        "single_window_support (1 window)",
+        "last_segment (window sees post-action framing)"
+      ]
+    }
+  ],
+  "visual_events": [
+    {
+      "action": "walk around table",
+      "kind": "foot_contact",
+      "t_s": 0.4583333333333333,
+      "confidence": "high",
+      "basis": "leg-swing peak (prominence>=0.304) resolved to the following minimum = foot plant"
+    },
+    {
+      "action": "walk around table",
+      "kind": "foot_contact",
+      "t_s": 1.0833333333333333,
+      "confidence": "high",
+      "basis": "leg-swing peak (prominence>=0.304) resolved to the following minimum = foot plant"
+    },
+    {
+      "action": "walk around table",
+      "kind": "foot_contact",
+      "t_s": 1.6666666666666667,
+      "confidence": "high",
+      "basis": "leg-swing peak (prominence>=0.304) resolved to the following minimum = foot plant"
+    },
+    {
+      "action": "walk around table",
+      "kind": "foot_contact",
+      "t_s": 2.2083333333333335,
+      "confidence": "high",
+      "basis": "leg-swing peak (prominence>=0.304) resolved to the following minimum = foot plant"
+    },
+    {
+      "action": "pick up cup",
+      "kind": "lift",
+      "t_s": 2.5416666666666665,
+      "confidence": "medium",
+      "basis": "first table-region motion peak = mug lifted (localised for metadata only)"
+    },
+    {
+      "action": "drink from cup",
+      "kind": "sip_hold",
+      "t_s": 6.625,
+      "confidence": "medium",
+      "basis": "sustained low head-region motion = mug held at lips"
+    },
+    {
+      "action": "drink from cup",
+      "kind": "sip_hold",
+      "t_s": 7.791666666666667,
+      "confidence": "medium",
+      "basis": "sustained low head-region motion = mug held at lips"
+    },
+    {
+      "action": "place cup on table",
+      "kind": "mug_table_contact",
+      "t_s": 9.833333333333334,
+      "confidence": "medium",
+      "basis": "final table-region motion peak resolved to rest = mug meets table"
+    }
+  ],
+  "visual_motion_diagnostics": {
+    "stand": {
+      "all": 1.195,
+      "feet": 1.7084,
+      "head": 0.7296,
+      "table": 1.599
+    },
+    "walk around table": {
+      "all": 1.3577,
+      "feet": 1.7112,
+      "head": 0.9585,
+      "table": 1.882
+    },
+    "pick up cup": {
+      "all": 0.9353,
+      "feet": 0.9536,
+      "head": 0.8453,
+      "table": 1.272
+    },
+    "drink from cup": {
+      "all": 0.277,
+      "feet": 0.1452,
+      "head": 0.3865,
+      "table": 0.2467
+    },
+    "place cup on table": {
+      "all": 0.672,
+      "feet": 0.4458,
+      "head": 0.8014,
+      "table": 0.807
+    }
+  },
+  "foley_assets": {
+    "walking": {
+      "path": "audio/generated/walking_moss_v1_seed42.wav",
+      "duration_s": 10.0,
+      "detected_steps": [
+        0.176,
+        0.797,
+        1.403,
+        2.014,
+        2.56,
+        3.248,
+        3.916,
+        4.559,
+        5.2,
+        5.85,
+        6.464,
+        7.175,
+        7.826,
+        8.43,
+        9.049
+      ]
+    },
+    "drinking": {
+      "path": "audio/generated/drinking_moss_v2_local_seed42.wav",
+      "duration_s": 10.0,
+      "selected_sip_segments": [
+        {
+          "src_s": 8.976,
+          "end_s": 9.676,
+          "wet_200_1k": 0.915
+        },
+        {
+          "src_s": 1.601,
+          "end_s": 2.301,
+          "wet_200_1k": 0.67
+        }
+      ]
+    },
+    "placement": {
+      "path": "audio/generated/cup_placement_foley_final.wav",
+      "duration_s": 0.4,
+      "derived_from": "cup_placement_moss_v1_seed42.wav",
+      "source_crop_s": [
+        6.15,
+        6.55
+      ]
+    }
+  },
+  "unavailable_foley": [
+    {
+      "action": "pick up cup",
+      "interval_s": [
+        2.5,
+        5.5
+      ],
+      "visual_event_s": 2.5417,
+      "reason": "No approved Foley. Two MOSS generations (UNCERTAIN, FAIL) and an extraction study from the drinking asset (NOT VIABLE) were rejected. Left intentionally silent; not fabricated.",
+      "audio_written": false
+    }
+  ],
+  "post_processing_policy": {
+    "level_mode": "active-RMS balance with per-clip peak ceiling",
+    "target_active_rms_dbfs": {
+      "walk around table": -34.0,
+      "drink from cup": -38.0,
+      "place cup on table": -32.0
+    },
+    "clip_peak_ceiling_dbfs": -12.0,
+    "bus_ceiling_dbfs": -3.0,
+    "limiter_threshold_dbfs": -6.0,
+    "fade_ms": 12.0,
+    "fade_shape": "raised cosine",
+    "zero_crossing_snap": true,
+    "dc_removed": true
+  },
+  "bus": {
+    "peak_before_dbfs": -12.0,
+    "normalisation_db": 6.0,
+    "normalisation_target_dbfs": -6.0,
+    "limiter_threshold_dbfs": -6.0,
+    "limiter_ceiling_dbfs": -3.0,
+    "max_gain_reduction_db": 0.0,
+    "limiter_engaged": false,
+    "peak_after_dbfs": -6.0,
+    "note": "linear normalisation only; limiter is a safety net and did not shape the audio unless max_gain_reduction_db > 0. No compression, no loudness maximising."
+  },
+  "truncations": [
+    {
+      "action": "place cup on table",
+      "truncated_ms": 93.1,
+      "reason": "clip crosses end of video; tail faded, timeline preserved"
+    }
+  ],
+  "placements": [
+    {
+      "action": "walk around table",
+      "asset": "walking",
+      "index": null,
+      "visual_event_s": 0.4583,
+      "visual_event_kind": "foot_contact",
+      "source_foley_start_s": 0.497563,
+      "source_foley_end_s": 2.839083,
+      "placed_video_start_s": 0.158458,
+      "placed_video_end_s": 2.499979,
+      "synchronization_offset_s": 0.2998,
+      "zero_cross_snap_ms": 0.167,
+      "dc_removed": -9.098e-05,
+      "raw_active_rms_dbfs": -30.47,
+      "target_active_rms_dbfs": -34.0,
+      "gain_applied_db": -4.05,
+      "out_peak_dbfs": -12.0,
+      "peak_ceiling_engaged": true,
+      "fade_in_ms": 12.0,
+      "fade_out_ms": 12.0,
+      "fade_shape": "raised cosine",
+      "truncated_ms": 0.0,
+      "strategy": "continuous slice SHIFTED (never stretched); the consecutive asset step-run whose spacing best matches the visible gait is translated onto the visible foot plants. Spans the whole walking sequence, including the part Module 2 labelled 'stand' (flagged suspect; footage shows walking).",
+      "visible_contacts_s": [
+        0.458,
+        1.083,
+        1.667,
+        2.208
+      ],
+      "asset_step_run_s": [
+        0.797,
+        1.403,
+        2.014,
+        2.56
+      ],
+      "steps_inside_window": [
+        0.458,
+        1.063,
+        1.675,
+        2.221
+      ],
+      "per_contact_error_ms": [
+        0.0,
+        -19.9,
+        8.0,
+        12.3
+      ],
+      "shift_offset_s": -0.3391
+    },
+    {
+      "action": "drink from cup",
+      "asset": "drinking",
+      "index": 1,
+      "visual_event_s": 6.625,
+      "visual_event_kind": "sip_hold",
+      "source_foley_start_s": 8.975771,
+      "source_foley_end_s": 9.675792,
+      "placed_video_start_s": 6.287687,
+      "placed_video_end_s": 6.987708,
+      "synchronization_offset_s": 0.3373,
+      "zero_cross_snap_ms": -0.021,
+      "dc_removed": -7.374e-05,
+      "raw_active_rms_dbfs": -45.95,
+      "target_active_rms_dbfs": -38.0,
+      "gain_applied_db": 7.95,
+      "out_peak_dbfs": -18.22,
+      "peak_ceiling_engaged": false,
+      "fade_in_ms": 12.0,
+      "fade_out_ms": 12.0,
+      "fade_shape": "raised cosine",
+      "truncated_ms": 0.0,
+      "strategy": "isolated sip/swallow segment, onset aligned to the visible sip hold"
+    },
+    {
+      "action": "drink from cup",
+      "asset": "drinking",
+      "index": 2,
+      "visual_event_s": 7.7917,
+      "visual_event_kind": "sip_hold",
+      "source_foley_start_s": 1.600667,
+      "source_foley_end_s": 2.300729,
+      "placed_video_start_s": 7.452583,
+      "placed_video_end_s": 8.152646,
+      "synchronization_offset_s": 0.3391,
+      "zero_cross_snap_ms": 0.083,
+      "dc_removed": -7.901e-05,
+      "raw_active_rms_dbfs": -46.75,
+      "target_active_rms_dbfs": -38.0,
+      "gain_applied_db": 8.75,
+      "out_peak_dbfs": -16.24,
+      "peak_ceiling_engaged": false,
+      "fade_in_ms": 12.0,
+      "fade_out_ms": 12.0,
+      "fade_shape": "raised cosine",
+      "truncated_ms": 0.0,
+      "strategy": "isolated sip/swallow segment, onset aligned to the visible sip hold"
+    },
+    {
+      "action": "place cup on table",
+      "asset": "placement",
+      "index": null,
+      "visual_event_s": 9.8333,
+      "visual_event_kind": "mug_table_contact",
+      "source_foley_start_s": 2.1e-05,
+      "source_foley_end_s": 0.399958,
+      "placed_video_start_s": 9.698125,
+      "placed_video_end_s": 10.005,
+      "synchronization_offset_s": 0.1352,
+      "zero_cross_snap_ms": 0.021,
+      "dc_removed": -7.235e-05,
+      "raw_active_rms_dbfs": -45.27,
+      "target_active_rms_dbfs": -32.0,
+      "gain_applied_db": 13.27,
+      "out_peak_dbfs": -17.4,
+      "peak_ceiling_engaged": false,
+      "fade_in_ms": 12.0,
+      "fade_out_ms": 12.0,
+      "fade_shape": "raised cosine",
+      "truncated_ms": 93.1,
+      "strategy": "400 ms contact asset, attack aligned to the visible mug-table contact"
+    }
+  ],
+  "audio": {
+    "sample_rate": 48000,
+    "channels": 1,
+    "subtype": "PCM_16",
+    "final_audio_duration_s": 10.005,
+    "peak_dbfs": -6.0,
+    "rms_dbfs": -36.87,
+    "crest_db": 30.87,
+    "duration_s": 10.005,
+    "clipping_check": {
+      "samples_at_or_over_1.0": 0,
+      "clipped": false
+    },
+    "nan_inf": {
+      "nan": 0,
+      "inf": 0
+    }
+  },
+  "final_video": {
+    "path": "output/final_silent_to_audio_polished.mp4",
+    "duration_s": 10.0,
+    "video_duration_s": 10.0,
+    "audio_duration_s": 9.984,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "audio_sample_rate": 48000,
+    "video_stream_copied": true
+  },
+  "sync_accuracy": {
+    "worst_error_ms": 20.3,
+    "per_action": {
+      "9_sync_walk": "rendered [0.458, 1.063, 1.675, 2.221] vs visible [0.4583333333333333, 1.0833333333333333, 1.6666666666666667, 2.2083333333333335] -> ['-0ms', '-20ms', '+8ms', '+13ms']",
+      "9_sync_drink": "rendered [6.638, 6.914, 7.803] vs visible [6.625, 7.791666666666667] -> ['+13ms', '+11ms']",
+      "9_sync_place": "rendered [9.833] vs visible [9.833333333333334] -> ['-0ms']"
+    }
+  },
+  "quality_gate": {
+    "result": "PASS",
+    "checks_passed": 19,
+    "checks_total": 19,
+    "failed": []
+  },
+  "preserved_v1_outputs": {
+    "audio": "audio/mixed/final_synchronized_audio.wav",
+    "video": "output/final_silent_to_audio.mp4"
+  },
+  "output_hashes": {
+    "source_video": "a620ee5820ab9dfc4d538f9cdc4ebabe3614045f3d178dbdd658afb0ce7aabc8",
+    "polished_mp4": "1d4f974748f02c010a3480d49e9ffc4c9686525562f927c61685382430b79864",
+    "polished_wav": "3e66a9c3272129a72f1a1c6d15a86d6d9155c6fcd2781377dc904e29f78bbc17",
+    "drinking_moss_v2_local_seed42.wav": "a59f38c96bc15f6c63acd2081b6b1300c97f747dcf78de9917644254fb5e6a2e",
+    "walking_moss_v1_seed42.wav": "0eae125b00cdbec0a788fca3b3b53e4f8b04f56a88924ef96776fa731f986950"
+  }
+}

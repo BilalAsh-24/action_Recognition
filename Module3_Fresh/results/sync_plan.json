@@ -1,0 +1,139 @@
+{
+  "placements": [
+    {
+      "action": "walk around table",
+      "asset": "walking",
+      "video_start_s": 0.1583,
+      "source_start_s": 0.4974,
+      "source_end_s": 2.8391,
+      "duration_s": 2.3417,
+      "aligned_to_visual_event_s": 0.4583,
+      "alignment_kind": "foot_contact",
+      "aligned_source_onset_s": 0.7974,
+      "shift_offset_s": -0.3391,
+      "visible_contacts_s": [
+        0.458,
+        1.083,
+        1.667,
+        2.208
+      ],
+      "asset_step_run_s": [
+        0.797,
+        1.403,
+        2.014,
+        2.56
+      ],
+      "steps_inside_window": [
+        0.458,
+        1.063,
+        1.675,
+        2.221
+      ],
+      "per_contact_error_ms": [
+        0.0,
+        -19.9,
+        8.0,
+        12.3
+      ],
+      "strategy": "continuous slice SHIFTED (never stretched); the consecutive asset step-run whose spacing best matches the visible gait is translated onto the visible foot plants. Spans the whole walking sequence, including the part Module 2 labelled 'stand' (flagged suspect; footage shows walking)."
+    },
+    {
+      "action": "drink from cup",
+      "asset": "drinking",
+      "index": 1,
+      "video_start_s": 6.2877,
+      "source_start_s": 8.9758,
+      "source_end_s": 9.6758,
+      "duration_s": 0.7,
+      "aligned_to_visual_event_s": 6.625,
+      "alignment_kind": "sip_hold",
+      "clip_onset_offset_s": 0.3373,
+      "strategy": "isolated sip/swallow segment, onset aligned to the visible sip hold"
+    },
+    {
+      "action": "drink from cup",
+      "asset": "drinking",
+      "index": 2,
+      "video_start_s": 7.4525,
+      "source_start_s": 1.6006,
+      "source_end_s": 2.3006,
+      "duration_s": 0.7,
+      "aligned_to_visual_event_s": 7.7917,
+      "alignment_kind": "sip_hold",
+      "clip_onset_offset_s": 0.3392,
+      "strategy": "isolated sip/swallow segment, onset aligned to the visible sip hold"
+    },
+    {
+      "action": "place cup on table",
+      "asset": "placement",
+      "video_start_s": 9.6981,
+      "source_start_s": 0.0,
+      "source_end_s": 0.4,
+      "duration_s": 0.4,
+      "aligned_to_visual_event_s": 9.8333,
+      "alignment_kind": "mug_table_contact",
+      "clip_onset_offset_s": 0.1353,
+      "strategy": "400 ms contact asset, attack aligned to the visible mug-table contact"
+    }
+  ],
+  "unavailable": [
+    {
+      "action": "pick up cup",
+      "interval_s": [
+        2.5,
+        5.5
+      ],
+      "visual_event_s": 2.5417,
+      "reason": "No approved Foley. Two MOSS generations (UNCERTAIN, FAIL) and an extraction study from the drinking asset (NOT VIABLE) were rejected. Left intentionally silent; not fabricated.",
+      "audio_written": false
+    }
+  ],
+  "assets": {
+    "walking": {
+      "path": "audio/generated/walking_moss_v1_seed42.wav",
+      "duration_s": 10.0,
+      "detected_steps": [
+        0.176,
+        0.797,
+        1.403,
+        2.014,
+        2.56,
+        3.248,
+        3.916,
+        4.559,
+        5.2,
+        5.85,
+        6.464,
+        7.175,
+        7.826,
+        8.43,
+        9.049
+      ]
+    },
+    "drinking": {
+      "path": "audio/generated/drinking_moss_v2_local_seed42.wav",
+      "duration_s": 10.0,
+      "selected_sip_segments": [
+        {
+          "src_s": 8.976,
+          "end_s": 9.676,
+          "wet_200_1k": 0.915
+        },
+        {
+          "src_s": 1.601,
+          "end_s": 2.301,
+          "wet_200_1k": 0.67
+        }
+      ]
+    },
+    "placement": {
+      "path": "audio/generated/cup_placement_foley_final.wav",
+      "duration_s": 0.4,
+      "derived_from": "cup_placement_moss_v1_seed42.wav",
+      "source_crop_s": [
+        6.15,
+        6.55
+      ]
+    }
+  }
+}

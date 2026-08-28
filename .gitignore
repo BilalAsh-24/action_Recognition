@@ -1,0 +1,83 @@
+# ---------------------------------------------------------------------------
+# Silent-Video-Project — what NOT to publish
+#
+# The working tree is ~28 GB. Almost all of that is virtual environments and
+# model weights, which are reproducible from the setup docs and must not be
+# redistributed. This repository carries SOURCE, DOCUMENTATION, and small
+# DEMO MEDIA only.
+# ---------------------------------------------------------------------------
+
+# --- OS / editor ---
+.DS_Store
+._*
+.idea/
+.vscode/
+*.swp
+
+# --- local tool settings ---
+.claude/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# --- virtual environments (never commit; recreate from docs) ---
+venv*/
+**/venv*/
+.venv/
+env/
+
+# --- Node ---
+node_modules/
+**/node_modules/
+**/frontend/dist/
+**/*.tsbuildinfo
+npm-debug.log*
+
+# --- model weights & checkpoints (licence + size) -------------------------
+# MOSS-SoundEffect v2.0 ....... 10 GB, download per moss install docs
+# MMAudio / AudioLDM2 ......... evaluated then rejected
+# Stable Audio Open 1.0 ....... Stability AI Community licence, NON-COMMERCIAL,
+#                               redistribution not permitted here
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.onnx
+Module3_Fresh/moss/checkpoints/
+Module3_Fresh/models/
+Module3_Fresh/work/
+
+# --- vendored third-party repository ---------------------------------------
+# MOSS-TTS is pinned at upstream commit 58b20a0 and is deliberately NOT
+# vendored here: it must stay pristine. Clone it per Module3_Fresh/docs.
+Module3_Fresh/moss/MOSS-TTS/
+
+# --- runtime data (per-run uploads, jobs and outputs) ---
+Module3_Fresh/data/
+
+# --- separate earlier projects, not part of action recognition ---
+01-Lip-Reading/
+02-Auto-AVSR-Test/
+
+# --- 03-FoleyCrafter-Test: keep only the Module 2 source + evaluation record
+03-FoleyCrafter-Test/**
+!03-FoleyCrafter-Test/
+!03-FoleyCrafter-Test/*.py
+!03-FoleyCrafter-Test/action-recognition/
+!03-FoleyCrafter-Test/action-recognition/*.py
+!03-FoleyCrafter-Test/action-recognition/results/
+!03-FoleyCrafter-Test/action-recognition/results/*.json
+!03-FoleyCrafter-Test/action-recognition/results/*.txt
+!03-FoleyCrafter-Test/action-recognition/results/*.md
+!03-FoleyCrafter-Test/action-recognition/qwen/
+!03-FoleyCrafter-Test/action-recognition/qwen/*.py
+!03-FoleyCrafter-Test/action-recognition/videomae/
+!03-FoleyCrafter-Test/action-recognition/videomae/*.py
+
+# --- logs ---
+*.log

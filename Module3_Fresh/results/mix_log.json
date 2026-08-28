@@ -1,0 +1,102 @@
+{
+  "timeline_duration_s": 10.005,
+  "sample_rate": 48000,
+  "samples": 480240,
+  "tracks": [
+    {
+      "action": "walk around table",
+      "asset": "walking",
+      "index": null,
+      "video_start_s": 1.5,
+      "video_end_s": 2.499979,
+      "source_start_s": 0.019,
+      "source_end_s": 1.019,
+      "aligned_to_visual_event_s": 2.2917,
+      "alignment_kind": "foot_contact",
+      "raw_peak_dbfs": -11.39,
+      "target_peak_dbfs": -20.0,
+      "gain_linear": 0.37101,
+      "gain_db": -8.61,
+      "fade_in_ms": 8.0,
+      "fade_out_ms": 8.0,
+      "truncated_ms": 0.0
+    },
+    {
+      "action": "drink from cup",
+      "asset": "drinking",
+      "index": 1,
+      "video_start_s": 6.216208,
+      "video_end_s": 6.916208,
+      "source_start_s": 8.946,
+      "source_end_s": 9.646,
+      "aligned_to_visual_event_s": 6.5833,
+      "alignment_kind": "sip_hold",
+      "raw_peak_dbfs": -26.18,
+      "target_peak_dbfs": -24.0,
+      "gain_linear": 1.28577,
+      "gain_db": 2.18,
+      "fade_in_ms": 8.0,
+      "fade_out_ms": 8.0,
+      "truncated_ms": 0.0
+    },
+    {
+      "action": "drink from cup",
+      "asset": "drinking",
+      "index": 2,
+      "video_start_s": 7.2565,
+      "video_end_s": 7.9565,
+      "source_start_s": 1.4047,
+      "source_end_s": 2.1047,
+      "aligned_to_visual_event_s": 7.7917,
+      "alignment_kind": "sip_hold",
+      "raw_peak_dbfs": -24.97,
+      "target_peak_dbfs": -24.0,
+      "gain_linear": 1.11879,
+      "gain_db": 0.97,
+      "fade_in_ms": 8.0,
+      "fade_out_ms": 8.0,
+      "truncated_ms": 0.0
+    },
+    {
+      "action": "place cup on table",
+      "asset": "placement",
+      "index": null,
+      "video_start_s": 9.698104,
+      "video_end_s": 10.005,
+      "source_start_s": 0.0,
+      "source_end_s": 0.4,
+      "aligned_to_visual_event_s": 9.8333,
+      "alignment_kind": "mug_table_contact",
+      "raw_peak_dbfs": -30.7,
+      "target_peak_dbfs": -18.0,
+      "gain_linear": 4.31511,
+      "gain_db": 12.7,
+      "fade_in_ms": 8.0,
+      "fade_out_ms": 8.0,
+      "truncated_ms": 93.1
+    }
+  ],
+  "truncations": [
+    {
+      "action": "place cup on table",
+      "asset": "placement",
+      "truncated_samples": 4469,
+      "truncated_ms": 93.1,
+      "reason": "clip extends past end of video; tail faded out to preserve video duration"
+    }
+  ],
+  "mix_bus": {
+    "peak_before_dbfs": -18.0,
+    "headroom_ceiling_dbfs": -3.0,
+    "bus_gain_db": 0.0,
+    "peak_after_dbfs": -18.0,
+    "note": "bus gain applied only if the sum exceeded the ceiling"
+  },
+  "output": {
+    "path": "audio/mixed/final_synchronized_audio.wav",
+    "peak_dbfs": -18.0,
+    "rms_dbfs": -48.01,
+    "clipped_samples": 0,
+    "bytes": 960524
+  }
+}

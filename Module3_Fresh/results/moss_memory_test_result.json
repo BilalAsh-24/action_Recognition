@@ -1,0 +1,165 @@
+{
+  "mode": "DRY RUN \u2014 no audio generated",
+  "phases": {
+    "1_text_encoder": {
+      "component": {
+        "name": "text_encoder",
+        "params_M": 1720.57,
+        "bytes_gb": 3.441,
+        "param_dtypes": [
+          "torch.bfloat16"
+        ],
+        "buffer_dtypes": [
+          "torch.float32"
+        ],
+        "complex_buffers_preserved": false,
+        "devices": [
+          "mps"
+        ],
+        "dtype_ok": true,
+        "device_ok": true
+      },
+      "load_s": 2.55,
+      "resident": {
+        "used_gb": 8.687,
+        "available_gb": 6.082,
+        "swap_gb": 2.126,
+        "mps_alloc_gb": 3.441,
+        "mps_driver_gb": 3.954
+      },
+      "residency_after_free": {
+        "Qwen3TextEncoder": 0
+      },
+      "after_free": {
+        "used_gb": 8.687,
+        "available_gb": 6.082,
+        "swap_gb": 2.126,
+        "mps_alloc_gb": 0.0,
+        "mps_driver_gb": 0.0
+      }
+    },
+    "2_dit": {
+      "component": {
+        "name": "dit",
+        "params_M": 1416.05,
+        "bytes_gb": 2.849,
+        "param_dtypes": [
+          "torch.bfloat16"
+        ],
+        "buffer_dtypes": [
+          "torch.complex128"
+        ],
+        "complex_buffers_preserved": true,
+        "devices": [
+          "mps"
+        ],
+        "dtype_ok": true,
+        "device_ok": true
+      },
+      "load_s": 10.36,
+      "resident": {
+        "used_gb": 11.623,
+        "available_gb": 2.604,
+        "swap_gb": 2.126,
+        "mps_alloc_gb": 5.65,
+        "mps_driver_gb": 6.72
+      },
+      "dit_dim": 1536,
+      "num_layers": 30,
+      "residency_after_free": {
+        "WanAudioModel": 0
+      },
+      "after_free": {
+        "used_gb": 11.623,
+        "available_gb": 2.604,
+        "swap_gb": 2.126,
+        "mps_alloc_gb": 0.0,
+        "mps_driver_gb": 0.0
+      }
+    },
+    "3_vae": {
+      "component": {
+        "name": "vae",
+        "params_M": 371.59,
+        "bytes_gb": 0.743,
+        "param_dtypes": [
+          "torch.bfloat16"
+        ],
+        "buffer_dtypes": [],
+        "complex_buffers_preserved": false,
+        "devices": [
+          "mps"
+        ],
+        "dtype_ok": true,
+        "device_ok": true
+      },
+      "load_s": 3.18,
+      "resident": {
+        "used_gb": 9.37,
+        "available_gb": 4.965,
+        "swap_gb": 2.126,
+        "mps_alloc_gb": 0.992,
+        "mps_driver_gb": 2.752
+      },
+      "sample_rate": 48000,
+      "hop_length": 960,
+      "residency_after_free": {
+        "DAC": 0
+      },
+      "after_free": {
+        "used_gb": 9.37,
+        "available_gb": 4.965,
+        "swap_gb": 2.126,
+        "mps_alloc_gb": 0.0,
+        "mps_driver_gb": 0.0
+      }
+    }
+  },
+  "config": {
+    "device": "mps",
+    "dtype": "torch.bfloat16",
+    "fp16_used": false,
+    "cuda_used": false,
+    "TORCHDYNAMO_DISABLE": "1",
+    "checkpoint": "moss/checkpoints/MOSS-SoundEffect-v2.0"
+  },
+  "baseline": {
+    "used_gb": 4.854,
+    "available_gb": 9.893,
+    "swap_gb": 2.126,
+    "mps_alloc_gb": 0.0,
+    "mps_driver_gb": 0.0
+  },
+  "memory": {
+    "baseline": {
+      "used_gb": 4.853,
+      "available_gb": 9.9,
+      "swap_gb": 2.126,
+      "mps_alloc_gb": 0.0,
+      "mps_driver_gb": 0.0
+    },
+    "peak_used_gb": 11.623,
+    "min_available_gb": 2.602,
+    "peak_swap_gb": 2.126,
+    "peak_mps_driver_gb": 6.775,
+    "swap_growth_gb": 0.0,
+    "used_growth_gb": 6.77,
+    "abort_threshold_gb": 1.5,
+    "breach": null
+  },
+  "final": {
+    "used_gb": 9.37,
+    "available_gb": 4.965,
+    "swap_gb": 2.126,
+    "mps_alloc_gb": 0.0,
+    "mps_driver_gb": 0.0
+  },
+  "weights": {
+    "largest_single_phase_gb": 3.441,
+    "sum_if_all_resident_gb": 7.033,
+    "stock_pipeline_gb": 10.59,
+    "saving_vs_stock_gb": 7.15
+  },
+  "problems": [],
+  "verdict": "SAFE_TO_GENERATE"
+}

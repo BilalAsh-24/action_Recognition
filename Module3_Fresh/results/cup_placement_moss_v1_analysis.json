@@ -1,0 +1,364 @@
+{
+  "file": "audio/generated/cup_placement_moss_v1_seed42.wav",
+  "basic": {
+    "sample_rate": 48000,
+    "channels": 1,
+    "duration_s": 10.0,
+    "samples": 480000,
+    "rms": 0.001288966621008543,
+    "rms_dbfs": -57.8,
+    "peak": 0.0299072265625,
+    "peak_dbfs": -30.48,
+    "crest_db": 27.31,
+    "clipped_samples": 0,
+    "nan": 0,
+    "inf": 0,
+    "all_finite": true,
+    "effective_bits_used": 10.9
+  },
+  "detection": {
+    "candidates": 85,
+    "kept": 15,
+    "min_gap_s": 0.08,
+    "gate_db": 25
+  },
+  "events": [
+    {
+      "t_s": 0.6133,
+      "peak": 0.021608,
+      "peak_dbfs": -33.3,
+      "attack_ms": 11.8,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5612.0,
+      "flatness": 0.0269,
+      "dominant_hz": [
+        188.0,
+        164.0,
+        211.0
+      ],
+      "b_0_200": 40.4,
+      "b_200_1k": 57.2,
+      "b_1k_5k": 2.1,
+      "b_5k_15k": 0.2
+    },
+    {
+      "t_s": 0.8213,
+      "peak": 0.031188,
+      "peak_dbfs": -30.1,
+      "attack_ms": 19.8,
+      "decay20_ms": 47.8,
+      "decay60_ms": null,
+      "centroid_hz": 1269.0,
+      "flatness": 0.0004,
+      "dominant_hz": [
+        94.0,
+        70.0,
+        188.0
+      ],
+      "b_0_200": 70.1,
+      "b_200_1k": 29.4,
+      "b_1k_5k": 0.4,
+      "b_5k_15k": 0.0
+    },
+    {
+      "t_s": 0.9067,
+      "peak": 0.003531,
+      "peak_dbfs": -49.0,
+      "attack_ms": 0.0,
+      "decay20_ms": 21.1,
+      "decay60_ms": null,
+      "centroid_hz": 5616.0,
+      "flatness": 0.0262,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 88.1,
+      "b_200_1k": 8.1,
+      "b_1k_5k": 1.9,
+      "b_5k_15k": 1.8
+    },
+    {
+      "t_s": 3.6533,
+      "peak": 0.000304,
+      "peak_dbfs": -70.3,
+      "attack_ms": 106.5,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 6272.0,
+      "flatness": 0.0379,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 77.9,
+      "b_200_1k": 1.9,
+      "b_1k_5k": 9.8,
+      "b_5k_15k": 10.0
+    },
+    {
+      "t_s": 3.7547,
+      "peak": 0.0182,
+      "peak_dbfs": -34.8,
+      "attack_ms": 10.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5472.0,
+      "flatness": 0.0291,
+      "dominant_hz": [
+        188.0,
+        211.0,
+        164.0
+      ],
+      "b_0_200": 41.8,
+      "b_200_1k": 57.9,
+      "b_1k_5k": 0.3,
+      "b_5k_15k": 0.1
+    },
+    {
+      "t_s": 3.9413,
+      "peak": 0.0182,
+      "peak_dbfs": -34.8,
+      "attack_ms": 6.6,
+      "decay20_ms": 16.8,
+      "decay60_ms": null,
+      "centroid_hz": 5351.0,
+      "flatness": 0.026,
+      "dominant_hz": [
+        188.0,
+        211.0,
+        94.0
+      ],
+      "b_0_200": 56.1,
+      "b_200_1k": 43.3,
+      "b_1k_5k": 0.4,
+      "b_5k_15k": 0.1
+    },
+    {
+      "t_s": 6.1067,
+      "peak": 0.000348,
+      "peak_dbfs": -69.2,
+      "attack_ms": 38.6,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 6067.0,
+      "flatness": 0.0315,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 82.4,
+      "b_200_1k": 2.0,
+      "b_1k_5k": 7.3,
+      "b_5k_15k": 7.9
+    },
+    {
+      "t_s": 6.2133,
+      "peak": 0.022365,
+      "peak_dbfs": -33.0,
+      "attack_ms": 2.3,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 5057.0,
+      "flatness": 0.0224,
+      "dominant_hz": [
+        375.0,
+        398.0,
+        188.0
+      ],
+      "b_0_200": 23.6,
+      "b_200_1k": 74.5,
+      "b_1k_5k": 1.8,
+      "b_5k_15k": 0.1
+    },
+    {
+      "t_s": 6.2987,
+      "peak": 0.027106,
+      "peak_dbfs": -31.3,
+      "attack_ms": 18.9,
+      "decay20_ms": 49.2,
+      "decay60_ms": null,
+      "centroid_hz": 1313.0,
+      "flatness": 0.0006,
+      "dominant_hz": [
+        94.0,
+        70.0,
+        117.0
+      ],
+      "b_0_200": 62.1,
+      "b_200_1k": 37.5,
+      "b_1k_5k": 0.3,
+      "b_5k_15k": 0.0
+    },
+    {
+      "t_s": 6.384,
+      "peak": 0.003048,
+      "peak_dbfs": -50.3,
+      "attack_ms": 1.0,
+      "decay20_ms": 64.2,
+      "decay60_ms": null,
+      "centroid_hz": 5655.0,
+      "flatness": 0.0274,
+      "dominant_hz": [
+        0.0,
+        47.0,
+        23.0
+      ],
+      "b_0_200": 85.1,
+      "b_200_1k": 10.1,
+      "b_1k_5k": 2.3,
+      "b_5k_15k": 2.4
+    },
+    {
+      "t_s": 7.52,
+      "peak": 0.000318,
+      "peak_dbfs": -69.9,
+      "attack_ms": 1.4,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 6179.0,
+      "flatness": 0.0351,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 79.1,
+      "b_200_1k": 2.0,
+      "b_1k_5k": 8.8,
+      "b_5k_15k": 9.7
+    },
+    {
+      "t_s": 7.6373,
+      "peak": 0.000316,
+      "peak_dbfs": -70.0,
+      "attack_ms": 108.6,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 6207.0,
+      "flatness": 0.0343,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 81.6,
+      "b_200_1k": 1.6,
+      "b_1k_5k": 7.6,
+      "b_5k_15k": 8.9
+    },
+    {
+      "t_s": 7.7387,
+      "peak": 0.014062,
+      "peak_dbfs": -37.0,
+      "attack_ms": 19.5,
+      "decay20_ms": 16.6,
+      "decay60_ms": null,
+      "centroid_hz": 5220.0,
+      "flatness": 0.0249,
+      "dominant_hz": [
+        117.0,
+        141.0,
+        94.0
+      ],
+      "b_0_200": 62.5,
+      "b_200_1k": 36.9,
+      "b_1k_5k": 0.4,
+      "b_5k_15k": 0.2
+    },
+    {
+      "t_s": 9.0987,
+      "peak": 0.000294,
+      "peak_dbfs": -70.6,
+      "attack_ms": 62.9,
+      "decay20_ms": null,
+      "decay60_ms": null,
+      "centroid_hz": 6211.0,
+      "flatness": 0.0343,
+      "dominant_hz": [
+        0.0,
+        23.0,
+        47.0
+      ],
+      "b_0_200": 81.1,
+      "b_200_1k": 2.0,
+      "b_1k_5k": 7.6,
+      "b_5k_15k": 9.0
+    },
+    {
+      "t_s": 9.216,
+      "peak": 0.023079,
+      "peak_dbfs": -32.7,
+      "attack_ms": 2.5,
+      "decay20_ms": 27.1,
+      "decay60_ms": null,
+      "centroid_hz": 5082.0,
+      "flatness": 0.0266,
+      "dominant_hz": [
+        211.0,
+        188.0,
+        141.0
+      ],
+      "b_0_200": 49.5,
+      "b_200_1k": 50.0,
+      "b_1k_5k": 0.3,
+      "b_5k_15k": 0.1
+    }
+  ],
+  "event_count": 15,
+  "timing": {
+    "ioi_s": [
+      0.208,
+      0.085,
+      2.747,
+      0.101,
+      0.187,
+      2.165,
+      0.107,
+      0.085,
+      0.085,
+      1.136,
+      0.117,
+      0.101,
+      1.36,
+      0.117
+    ],
+    "ioi_mean": 0.614,
+    "span_s": 8.603
+  },
+  "background": {
+    "bg_fraction_of_file": 0.631,
+    "bg_rms": 0.00018462,
+    "bg_rms_dbfs": -74.7,
+    "event_to_bg_ratio_db": 44.2,
+    "pct_below_-20db": 95.84,
+    "pct_below_-40db": 6.66
+  },
+  "character": {
+    "spectral_flatness": 0.02994,
+    "frame_self_similarity": 0.9357,
+    "dyn_range_p95_p5_db": 17.48,
+    "harmonic_ratio_hpss": 0.0205,
+    "envelope_mod_peak_hz": 1.3,
+    "energy_0_200": 61.71,
+    "energy_200_1k": 37.55,
+    "energy_1k_5k": 0.52,
+    "energy_5k_15k": 0.22,
+    "per_second_rms": [
+      0.002399,
+      0.000192,
+      0.000173,
+      0.001424,
+      0.000211,
+      0.000175,
+      0.002186,
+      0.001004,
+      0.00017,
+      0.001695
+    ]
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "video": "/Users/bilalashfaque/Desktop/Silent-Video-Project/03-FoleyCrafter-Test/test_video.mp4",
+  "duration": 1.293333,
+  "window_duration": 0.5,
+  "stride": 0.25,
+  "num_windows": 5,
+  "windows": [
+    {
+      "start": 0.0,
+      "end": 0.5,
+      "scores": {
+        "opening a door": 0.04772672429680824,
+        "closing a door": 0.0692865177989006,
+        "locking a door": 0.04690736532211304,
+        "unlocking a door": 0.048072706907987595,
+        "walking": 0.10341595858335495,
+        "running": 0.09570854902267456,
+        "clapping": 0.0934891402721405,
+        "knocking on a door": 0.08489081263542175,
+        "pouring liquid": 0.3798944056034088,
+        "an object falling": 0.030607737600803375
+      },
+      "top1": "pouring liquid",
+      "top1_score": 0.3798944056034088,
+      "top2": "walking",
+      "top2_score": 0.10341595858335495
+    },
+    {
+      "start": 0.25,
+      "end": 0.75,
+      "scores": {
+        "opening a door": 0.07980456203222275,
+        "closing a door": 0.09781963378190994,
+        "locking a door": 0.06271284073591232,
+        "unlocking a door": 0.06614454090595245,
+        "walking": 0.09745760262012482,
+        "running": 0.09011412411928177,
+        "clapping": 0.1473505198955536,
+        "knocking on a door": 0.12738609313964844,
+        "pouring liquid": 0.2136014848947525,
+        "an object falling": 0.01760854944586754
+      },
+      "top1": "pouring liquid",
+      "top1_score": 0.2136014848947525,
+      "top2": "clapping",
+      "top2_score": 0.1473505198955536
+    },
+    {
+      "start": 0.5,
+      "end": 1.0,
+      "scores": {
+        "opening a door": 0.07311359792947769,
+        "closing a door": 0.09483826160430908,
+        "locking a door": 0.0669802874326706,
+        "unlocking a door": 0.06360318511724472,
+        "walking": 0.064630426466465,
+        "running": 0.08790785074234009,
+        "clapping": 0.16726678609848022,
+        "knocking on a door": 0.13376711308956146,
+        "pouring liquid": 0.23323725163936615,
+        "an object falling": 0.014655247330665588
+      },
+      "top1": "pouring liquid",
+      "top1_score": 0.23323725163936615,
+      "top2": "clapping",
+      "top2_score": 0.16726678609848022
+    },
+    {
+      "start": 0.75,
+      "end": 1.25,
+      "scores": {
+        "opening a door": 0.05879763513803482,
+        "closing a door": 0.08225777745246887,
+        "locking a door": 0.06168629974126816,
+        "unlocking a door": 0.056800127029418945,
+        "walking": 0.046566639095544815,
+        "running": 0.06917240470647812,
+        "clapping": 0.20764340460300446,
+        "knocking on a door": 0.1257937252521515,
+        "pouring liquid": 0.2755748927593231,
+        "an object falling": 0.015707077458500862
+      },
+      "top1": "pouring liquid",
+      "top1_score": 0.2755748927593231,
+      "top2": "clapping",
+      "top2_score": 0.20764340460300446
+    },
+    {
+      "start": 0.7933,
+      "end": 1.2933,
+      "scores": {
+        "opening a door": 0.05856433883309364,
+        "closing a door": 0.08280584216117859,
+        "locking a door": 0.06090772897005081,
+        "unlocking a door": 0.05516741797327995,
+        "walking": 0.0448138490319252,
+        "running": 0.06798455864191055,
+        "clapping": 0.20805278420448303,
+        "knocking on a door": 0.12185060977935791,
+        "pouring liquid": 0.28349655866622925,
+        "an object falling": 0.0163563322275877
+      },
+      "top1": "pouring liquid",
+      "top1_score": 0.28349655866622925,
+      "top2": "clapping",
+      "top2_score": 0.20805278420448303
+    }
+  ],
+  "segments": [
+    {
+      "action": "pouring liquid",
+      "start": 0.0,
+      "end": 1.2933,
+      "confidence": 0.2772,
+      "status": "candidate"
+    }
+  ]
+}

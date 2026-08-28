@@ -1,0 +1,32 @@
+MODULE 2 — TEMPORAL ACTION RECOGNITION (Qwen2.5-VL-3B-Instruct)
+VIDEO: /Users/bilalashfaque/Desktop/Silent-Video-Project/03-FoleyCrafter-Test/action-recognition/module2_test_video.mp4
+DURATION: 10.005s  1280x720  24/1 fps  240 frames
+WINDOW: 2.0s  STRIDE: 1.0s  FRAMES/WINDOW: 8
+
+RAW WINDOW PREDICTIONS
+
+ 0.00 --------------  2.00  stand
+ 1.00 --------------  3.00  walk around table
+ 2.00 --------------  4.00  pick up the cup
+ 3.00 --------------  5.00  pick up cup
+ 4.00 --------------  6.00  pick up cup
+ 5.00 --------------  7.00  drink from cup
+ 6.00 --------------  8.00  drink from cup
+ 7.00 --------------  9.00  drink from cup
+ 8.00 -------------- 10.00  place cup on table
+
+MERGED ACTION SEGMENTS
+
+ 0.00 --------------  2.00  stand
+ 1.00 --------------  3.00  walk around table
+ 2.00 --------------  6.00  pick up cup
+ 5.00 --------------  9.00  drink from cup
+ 8.00 -------------- 10.00  place cup on table
+
+RESOLVED NON-OVERLAPPING SEGMENTS (midpoint boundary resolution)
+
+ 0.00 --------------  1.50  stand                  (1.50s, 1 win)   [SUSPECT]
+ 1.50 --------------  2.50  walk around table      (1.00s, 1 win)   [SUSPECT]
+ 2.50 --------------  5.50  pick up cup            (3.00s, 3 win)
+ 5.50 --------------  8.50  drink from cup         (3.00s, 3 win)
+ 8.50 -------------- 10.00  place cup on table     (1.50s, 1 win)   [SUSPECT]
