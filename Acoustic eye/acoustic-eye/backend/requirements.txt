@@ -1,0 +1,35 @@
+# Acoustic Eye -- backend dependencies
+# Tested with Python 3.10 - 3.12 on Windows 11.
+
+# --- Web framework ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20        # required by FastAPI for file uploads
+
+# --- Video / numerical / signal processing ---
+opencv-python-headless==4.11.0.86
+numpy==2.1.3
+scipy==1.15.1
+
+# --- Complex steerable pyramids (Visual Microphone core) ---
+pyrtools==1.0.4
+
+# --- Audio I/O ---
+soundfile==0.13.1
+
+# --- Visualisation (server-side, headless Agg backend) ---
+matplotlib==3.10.0
+
+# --- Tests ---
+pytest==8.3.4
+httpx==0.28.1                   # FastAPI TestClient dependency
+
+# --- OPTIONAL: offline speech-to-text for the "audio in text" panel ---
+# Not installed by default. The app works fine without it (the signal-analysis
+# text is always produced). Enable transcription with:
+#     pip install faster-whisper
+# then tick "Attempt speech-to-text" in Advanced parameters. On first use it
+# downloads a ~75 MB model. Note: at ordinary camera frame rates the recovered
+# audio has no speech-band content, so this is only useful for very high-speed
+# (multi-kHz fps) captures.
+# faster-whisper==1.1.0

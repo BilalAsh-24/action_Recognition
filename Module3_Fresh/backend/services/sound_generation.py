@@ -89,7 +89,8 @@ def generate(spec: FoleySpec, settings: dict, timeout_s: int = 3600) -> tuple[Pa
                "--prompt", spec.prompt, "--negative", spec.negative,
                "--seed", str(settings["seed"]), "--seconds", str(settings["duration"]),
                "--steps", str(settings["steps"]), "--cfg", str(settings["cfg_scale"]),
-               "--sigma_shift", str(settings["sigma_shift"])]
+               "--sigma_shift", str(settings["sigma_shift"]),
+               "--full-seconds", str(int(settings.get("full_seconds", 10)))]
         native = out                      # MOSS already emits 48 kHz mono
     else:
         native = out.with_suffix(".native.wav")

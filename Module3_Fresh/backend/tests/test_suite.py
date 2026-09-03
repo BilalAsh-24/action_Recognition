@@ -123,11 +123,101 @@ def _():
         assert "no foley class is defined" not in r.lower(), \
             f"'{phrase}' should be a known silent action, not an unknown one: {r}"
 
-@test("silent and unsupported actions are handled without raising")
+@test("an action verb with an unfamiliar object still resolves (verb fallback)")
+def _():
+    # Regression: "place bread in toaster" resolved to nothing, because the generic
+    # keywords demanded a literal "table"/"down"/"object". The whole job then failed
+    # with "no supported Foley action" before the sound model was ever called.
+    cases = {"place bread in toaster": "object_placement",
+             "put phone on desk": "object_placement",
+             "insert the tray": "object_placement",
+             "lift the plate": "object_pickup",
+             "grab the remote": "object_pickup",
+             "press toaster": "button_press",
+             "flip the switch": "button_press",
+             "push the toaster lever down": "button_press"}
+    for phrase, key in cases.items():
+        sp, r = resolve(phrase)
+        assert sp is not None, f"'{phrase}' resolved to nothing: {r}"
+        assert sp.key == key, f"'{phrase}' -> {sp.key}, expected {key}"
+
+@test("the verb fallback never overrides a specific class or a silent action")
+def _():
+    # The fallback runs last on purpose. If it ever ran first, "place spoon on table"
+    # would inherit ceramic-mug Foley again - the original mis-mapping bug.
+    for phrase, key in (("place cup on table", "cup_placement"),
+                        ("place spoon on table", "spoon_placement"),
+                        ("pick up the cup", "cup_pickup"),
+                        ("pick up the spoon", "spoon_pickup")):
+        sp, _ = resolve(phrase)
+        assert sp and sp.key == key, f"'{phrase}' -> {sp.key if sp else None}, expected {key}"
+    for phrase in ("reach for the cup", "holding the mug", "standing still"):
+        sp, r = resolve(phrase)
+        assert sp is None, f"'{phrase}' should stay silent, got {sp.key if sp else None}"
+        assert "no foley class is defined" not in r.lower(), phrase
+
+@test("a bare verb never inherits an object-specific curated class")
+def _():
+    # Under open vocabulary a bare verb still gets sounded, but it must not be handed
+    # cup or spoon Foley - that was the original mis-mapping bug.
+    specific = {"cup_placement", "cup_pickup", "spoon_placement", "spoon_pickup",
+                "drinking", "stirring", "pouring"}
+    for phrase in ("place", "pressing", "pick"):
+        sp, _ = resolve(phrase)
+        assert sp is not None, f"'{phrase}' should still resolve under open vocabulary"
+        assert sp.key not in specific, f"bare verb '{phrase}' wrongly got {sp.key}"
+
+@test("only deliberate silences resolve to nothing; everything else is sounded")
 def _():
     s, r = resolve("stand"); assert s is None and "no foley" in r.lower(), r
-    s, r = resolve("juggling flaming torches"); assert s is None and "no foley class" in r.lower(), r
     s, r = resolve(""); assert s is None
+    # An action nobody wrote a class for is synthesised, not refused.
+    s, r = resolve("juggling flaming torches")
+    assert s is not None and r is None, "unknown action should synthesise a spec"
+    assert s.prompt and s.strategy in {"footstep", "hold", "contact", "continuous"}
+
+@test("open vocabulary: arbitrary actions all produce a usable spec")
+def _():
+    from services.prompt_synthesis import ARCHETYPE_SYNC
+    phrases = ["kicking a football", "ball bounces on the ground", "dribbling a basketball",
+               "chopping vegetables", "opening the fridge", "riding a bicycle",
+               "a dog barking", "hitting a tennis ball", "sweeping the floor",
+               "washing dishes", "writing with a pen", "shovelling snow",
+               "hammering a nail", "playing the drums", "climbing a ladder"]
+    for phrase in phrases:
+        sp, r = resolve(phrase)
+        assert sp is not None, f"'{phrase}' resolved to nothing: {r}"
+        assert sp.prompt and "no speech" in sp.prompt, phrase
+        assert sp.negative, phrase
+        assert sp.strategy in {"footstep", "hold", "contact", "continuous"}, phrase
+        assert sp.region in {"feet", "head", "table", "full"}, phrase
+        assert sp.selection in {"steps", "wet_segment", "event", "slice"}, phrase
+        assert -50.0 < sp.target_rms_dbfs < -20.0, phrase
+
+@test("every archetype maps onto a real motion band and a real selection path")
+def _():
+    # Integration guard: prompt_synthesis invents specs, synchronization consumes them.
+    # A region that is not a motion band would KeyError at sync time, on a live job.
+    from services.prompt_synthesis import ARCHETYPE_SYNC, ARCHETYPE_PROMPT, ARCHETYPE_VERBS
+    from services.synchronization import BANDS
+    assert set(ARCHETYPE_SYNC) == set(ARCHETYPE_PROMPT) == set(ARCHETYPE_VERBS), \
+        "archetype tables are out of sync with each other"
+    for arch, (strategy, region, selection, rms) in ARCHETYPE_SYNC.items():
+        assert region in BANDS, f"{arch}: region '{region}' is not a motion band"
+        assert strategy in {"footstep", "hold", "contact", "continuous"}, arch
+        assert selection in {"steps", "wet_segment", "event", "slice"}, arch
+    # and every region a hint can force must also be a real band
+    from services.prompt_synthesis import REGION_HINTS
+    for region in REGION_HINTS:
+        assert region in BANDS, f"region hint '{region}' is not a motion band"
+
+@test("synthesis is deterministic and shares one generation across phrasings")
+def _():
+    a, _ = resolve("kick the ball")
+    b, _ = resolve("kicking a ball")
+    assert a.key == b.key, f"{a.key} != {b.key} - would pay for two generations"
+    c, _ = resolve("kicking a football")
+    assert c.prompt == resolve("kicking a football")[0].prompt, "not deterministic"
 
 @test("every spec has a non-empty prompt and a valid strategy")
 def _():

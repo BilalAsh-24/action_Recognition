@@ -9,7 +9,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from core import config as C
 from core.jobs import STORE, STAGES
 from services import video_service as VS
-from services.prompt_map import supported_actions
+from services.prompt_map import supported_actions, vocabulary_mode
 from services.pipeline import run_pipeline
 
 router = APIRouter(prefix="/api")
@@ -52,7 +52,9 @@ def health():
 
 @router.get("/actions/supported")
 def actions_supported():
-    return {"actions": supported_actions()}
+    # The curated list is no longer the limit of what can be sounded, so the
+    # vocabulary block tells the caller that explicitly.
+    return {"actions": supported_actions(), "vocabulary": vocabulary_mode()}
 
 
 @router.post("/upload")

@@ -1,0 +1,46 @@
+MIT License
+
+Copyright (c) 2026 Acoustic Eye project authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+================================================================================
+THIRD-PARTY / ADAPTED CODE
+================================================================================
+
+The phase-based Visual Microphone processing in
+`backend/processing/visual_microphone.py` and `backend/processing/signal_processing.py`
+is adapted from:
+
+  visual-mic-master  (bundled as visual-mic-master.zip)
+  A Python re-implementation of MIT's "Visual Microphone".
+  Copyright (c) 2020 Antonio Musolino and Davide Sforza
+  Licensed under the MIT License (text identical to the above).
+
+The algorithm itself is described in:
+
+  A. Davis, M. Rubinstein, N. Wadhwa, G. J. Mysore, F. Durand, W. T. Freeman.
+  "The Visual Microphone: Passive Recovery of Sound from Video."
+  ACM Transactions on Graphics (Proc. SIGGRAPH) 33(4), 2014.
+
+Complex steerable pyramids are computed with `pyrtools`
+(Lab for Computational Vision, MIT License).
+
+See README.md ("Attribution" and "What was adapted from visual-mic-master")
+for a file-by-file breakdown of what was reused, changed, and newly written.

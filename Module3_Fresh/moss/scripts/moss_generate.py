@@ -11,7 +11,8 @@ text encoder, the DiT and the DAC VAE are never co-resident.
 
 Faithfulness to upstream (verified against wan_audio.py / pipeline_moss_soundeffect.py):
   * prompt gets the training-time suffix `" duration: 10.0s"` (append_duration_suffix=True)
-  * the engine always denoises a FULL 30 s latent, then the waveform is cropped to 10 s
+  * the latent denoised is `--full-seconds` long (default 10, was 30 as on the
+    Space); the waveform is then cropped to `--seconds`
   * noise is drawn on CPU with the seeded generator, then moved (rand_device="cpu")
   * the whole engine call runs under torch.autocast(device_type, bfloat16)
   * CFG: noise_pred = nega + cfg_scale * (posi - nega), computed in float32
@@ -60,6 +61,10 @@ def main() -> int:
     ap.add_argument("--steps", type=int, default=M.NUM_INFERENCE_STEPS)
     ap.add_argument("--cfg", type=float, default=M.CFG_SCALE)
     ap.add_argument("--sigma_shift", type=float, default=M.SIGMA_SHIFT)
+    # Length of the latent the DiT actually denoises. The Space uses 30 s and
+    # crops; nothing in the checkpoint requires it, so this is exposed for
+    # speed experiments. Default 30 keeps the validated path byte-identical.
+    ap.add_argument("--full-seconds", dest="full_seconds", type=int, default=30)
     A = ap.parse_args()
     global OUT_WAV, REPORT
     OUT_WAV = Path(A.out) if Path(A.out).is_absolute() else M.ROOT / A.out
@@ -72,7 +77,7 @@ def main() -> int:
 
     # --- exact Space configuration -------------------------------------------
     seconds = round(float(A.seconds), 1)
-    full_seconds = 30                       # max_inference_seconds; engine always denoises this
+    full_seconds = int(A.full_seconds)      # denoised window; cropped to `seconds` in phase 3
     sr = M.SAMPLE_RATE
     formatted_prompt = f"{A.prompt.strip()} duration: {seconds:.1f}s"
     cfg = {"model": "MOSS-SoundEffect v2.0", "device": M.DEVICE, "dtype": str(M.DTYPE),

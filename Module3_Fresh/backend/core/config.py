@@ -39,6 +39,9 @@ DEFAULTS = {
     "sample_rate": 48000,
     "channels": 1,
     "duration": 10.0,
+    # steps / cfg_scale / sigma_shift are always overwritten below by the active
+    # backend's own defaults. They are listed here only so the shape of the dict is
+    # complete; changing them here has no effect.
     "steps": 50,
     "cfg_scale": 4.0,
     "sigma_shift": 5.0,
@@ -60,7 +63,12 @@ BACKENDS = {
         "model": "MOSS-SoundEffect-v2.0",
         "python": MODULE3 / "moss" / "venv-moss" / "bin" / "python",
         "native_sample_rate": 48000, "native_channels": 1,
-        "defaults": {"steps": 50, "cfg_scale": 4.0, "sigma_shift": 5.0},
+        # 50 steps and a 30 s latent. Both were reduced for speed (25 steps, 10 s
+             # latent) and reverted: the output was audibly worse. The measured scores
+             # barely moved, so the quality gate did NOT catch it - listening did.
+             # Do not trade these for speed again without an A/B listen.
+             "defaults": {"steps": 50, "cfg_scale": 4.0, "sigma_shift": 5.0,
+                          "full_seconds": 30},
         "licence": "Apache-2.0",
     },
     "stable_audio": {

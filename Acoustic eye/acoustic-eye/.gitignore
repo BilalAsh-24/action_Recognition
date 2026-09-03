@@ -1,0 +1,32 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# --- Virtual environments ---
+.venv/
+venv/
+env/
+
+# --- Acoustic Eye runtime data ---
+uploads/*
+outputs/*
+!uploads/.gitkeep
+!outputs/.gitkeep
+backend/config.json
+
+# --- Editors / OS ---
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# --- Reference bundle (kept out of the app repo) ---
+visual-mic-master/
+visual-mic-master.zip
+*.mp4
+!tests/fixtures/*.mp4

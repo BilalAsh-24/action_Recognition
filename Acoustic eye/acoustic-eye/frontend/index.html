@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acoustic Eye — Visual Acoustic Reconstruction</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="38" height="38">
+            <circle cx="24" cy="24" r="21" fill="none" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="24" r="6" fill="currentColor"/>
+            <path d="M6 24c6-10 30-10 36 0M6 24c6 10 30 10 36 0" fill="none"
+                  stroke="currentColor" stroke-width="1.5" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <h1>ACOUSTIC EYE</h1>
+          <p>Visual Acoustic Reconstruction</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <button class="nav-link active" data-view="home">Home</button>
+        <button class="nav-link" data-view="how">How It Works</button>
+        <button class="nav-link" data-view="about">About</button>
+        <button id="theme-toggle" class="theme-toggle" title="Toggle light / dark">◐</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- ================= HOME ================= -->
+    <section id="view-home" class="view active">
+
+      <!-- HERO -->
+      <section class="hero" aria-label="Introduction">
+        <div class="hero-bg" aria-hidden="true">
+          <svg class="hero-wave" viewBox="0 0 1200 200" preserveAspectRatio="none">
+            <path d="M0,100 C150,40 300,160 450,100 C600,40 750,160 900,100 C1050,40 1200,160 1350,100 L1200,200 L0,200 Z"/>
+            <path d="M0,120 C150,70 300,170 450,120 C600,70 750,170 900,120 C1050,70 1200,170 1350,120 L1200,200 L0,200 Z"/>
+            <path d="M0,140 C150,100 300,180 450,140 C600,100 750,180 900,140 C1050,100 1200,180 1350,140 L1200,200 L0,200 Z"/>
+          </svg>
+        </div>
+        <div class="hero-content">
+          <p class="hero-kicker">Davis et al., SIGGRAPH 2014 · phase-based Visual Microphone</p>
+          <h2 class="hero-title">See sound.<br />Recover audio from a video's vibrations.</h2>
+          <p class="hero-sub">
+            Acoustic Eye analyses the sub-pixel motion that sound induces on
+            everyday objects and reconstructs a signal you can play, read as text,
+            and download.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" id="hero-cta">Upload a video</button>
+            <button class="btn btn-ghost" id="hero-how">How it works</button>
+          </div>
+        </div>
+      </section>
+
+      <p id="health-banner" class="banner hidden"></p>
+
+      <!-- 1. UPLOAD -->
+      <section class="card" id="step-upload">
+        <h2><span class="step-num">1</span> Upload a video</h2>
+        <p class="muted">
+          Upload a short clip of an object (a bag of chips, a plant leaf, a glass of
+          water, a sheet of paper…) filmed while sound was playing nearby. The camera
+          must be still. Accepted: MP4, AVI, MOV, MKV, WEBM — max <span id="max-mb">250</span> MB.
+          Audio-only files are rejected.
+        </p>
+
+        <div id="dropzone" class="dropzone" tabindex="0" role="button"
+             aria-label="Drag a video here or press to browse">
+          <div class="dropzone-inner">
+            <div class="dz-icon" aria-hidden="true">⇪</div>
+            <p class="dz-title">Drag &amp; drop a video here</p>
+            <p class="dz-or">or</p>
+            <button type="button" id="browse-btn" class="btn">Select Video</button>
+            <input type="file" id="file-input" accept="video/mp4,video/x-msvideo,video/quicktime,video/x-matroska,video/webm,.mp4,.avi,.mov,.mkv,.webm" hidden />
+          </div>
+        </div>
+
+        <div id="upload-progress" class="progress hidden">
+          <div class="progress-bar indeterminate"></div>
+          <span class="progress-label">Uploading &amp; validating…</span>
+        </div>
+
+        <p id="upload-error" class="alert error hidden"></p>
+
+        <div id="local-ingest" class="local-ingest hidden">
+          <h3>Or process a file already on this computer</h3>
+          <p class="muted">
+            For videos too large to upload through the browser (e.g. multi-GB
+            high-speed clips). The file is <strong>not</strong> copied or moved —
+            only a short segment is read from disk. The Visual Microphone only
+            needs a few seconds of footage.
+          </p>
+          <label class="local-field">Full path to the video file
+            <input type="text" id="local-path" spellcheck="false"
+                   placeholder="C:\Users\you\Videos\big-video.mp4" />
+          </label>
+          <div class="local-seg">
+            <label>Start (seconds)
+              <input type="number" id="local-start" min="0" step="1" value="0" />
+            </label>
+            <label>Segment length (seconds)
+              <input type="number" id="local-duration" min="1" step="1" value="10" />
+            </label>
+          </div>
+          <button id="local-btn" class="btn">Process local file segment</button>
+          <p id="local-hint" class="muted"></p>
+          <p id="local-error" class="alert error hidden"></p>
+        </div>
+      </section>
+
+      <!-- 2. PREVIEW -->
+      <section class="card hidden" id="step-preview">
+        <h2><span class="step-num">2</span> Video preview &amp; validation</h2>
+        <div class="preview-grid">
+          <div class="preview-video">
+            <video id="preview-player" controls playsinline muted></video>
+            <p id="preview-unavailable" class="muted hidden">
+              Inline preview isn't available for local files. The metadata shown
+              here is read directly from the file on disk.
+            </p>
+          </div>
+          <dl class="meta-list" id="meta-list">
+            <div><dt>Filename</dt><dd data-k="filename">—</dd></div>
+            <div><dt>File size</dt><dd data-k="filesize">—</dd></div>
+            <div><dt>Resolution</dt><dd data-k="resolution">—</dd></div>
+            <div><dt>FPS</dt><dd data-k="fps">—</dd></div>
+            <div><dt>Duration</dt><dd data-k="duration">—</dd></div>
+            <div><dt>Frames read (actual)</dt><dd data-k="frames">—</dd></div>
+            <div><dt>Container frame count</dt><dd data-k="frames_meta">—</dd></div>
+            <div><dt>Codec (FourCC)</dt><dd data-k="fourcc">—</dd></div>
+          </dl>
+        </div>
+        <p class="note" id="frame-note"></p>
+      </section>
+
+      <!-- 3. PARAMETERS + START -->
+      <section class="card hidden" id="step-process">
+        <h2><span class="step-num">3</span> Run acoustic reconstruction</h2>
+
+        <details class="params">
+          <summary>Advanced parameters</summary>
+          <div class="params-grid">
+            <label>True capture frame rate (fps)
+              <input type="number" id="p-capture-fps" min="1" max="500000" step="1"
+                     placeholder="use the file's own header" />
+              <small>Only set this if the camera's real rate differs from what the
+                file reports — high-speed cameras usually store a playback rate
+                (30/60 fps) instead. This becomes the output sample rate, so
+                Nyquist = half this value.</small>
+            </label>
+            <label>Remove mains/lighting flicker (Hz)
+              <input type="number" id="p-mains" min="10" max="1000" step="1"
+                     placeholder="off — try 60 (US) or 50 (EU/Asia)" />
+              <small>High-speed capture needs bright lamps, which pulse at twice
+                the mains frequency. That flicker is recovered as a very loud
+                tone that can bury the real sound. Notches it and its harmonics.</small>
+            </label>
+            <label>Low-pass cutoff (Hz)
+              <input type="number" id="p-lowpass" min="20" max="200000" step="10"
+                     placeholder="off — try 2000" />
+              <small>Removes broadband phase-estimation hiss above the acoustic
+                content. Only useful on high-frame-rate captures.</small>
+            </label>
+            <label>Down-sample factor
+              <input type="number" id="p-downsample" min="0.05" max="1" step="0.05" value="0.25" />
+              <small>Lower = faster, less spatial detail. Reference uses 0.1.</small>
+            </label>
+            <label>Pyramid scales
+              <input type="number" id="p-scales" min="1" max="6" step="1" value="1" />
+            </label>
+            <label>Pyramid orientations
+              <input type="number" id="p-orientations" min="1" max="8" step="1" value="2" />
+            </label>
+            <label>High-pass cutoff (fraction of Nyquist)
+              <input type="number" id="p-highpass" min="0.001" max="0.95" step="0.005" value="0.05" />
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" id="p-specsub" checked />
+              Also produce a spectral-subtraction denoised version
+            </label>
+            <label class="checkbox" id="p-transcribe-wrap" hidden>
+              <input type="checkbox" id="p-transcribe" />
+              Attempt speech-to-text on the result (experimental — only useful for
+              very high frame-rate captures)
+            </label>
+          </div>
+        </details>
+
+        <button id="start-btn" class="btn btn-primary btn-lg">START ACOUSTIC RECONSTRUCTION</button>
+
+        <div id="stage-list" class="stages hidden"></div>
+        <div id="proc-progress" class="progress hidden">
+          <div class="progress-bar" id="proc-bar"></div>
+          <span class="progress-label" id="proc-label">Working…</span>
+        </div>
+        <p id="process-error" class="alert error hidden"></p>
+      </section>
+
+      <!-- 4. RESULTS -->
+      <section class="card hidden" id="step-results">
+        <h2><span class="step-num">4</span> Reconstruction complete</h2>
+
+        <div class="result-block">
+          <h3>Recovered audio</h3>
+          <audio id="result-audio" controls preload="auto"></audio>
+          <div class="result-actions">
+            <a id="download-wav" class="btn" download>⬇ Download reconstructed audio (WAV)</a>
+          </div>
+          <p class="muted" id="wav-props"></p>
+        </div>
+
+        <div class="result-block" id="denoised-block" hidden>
+          <h3>Denoised audio (spectral subtraction)</h3>
+          <audio id="denoised-audio" controls preload="auto"></audio>
+          <div class="result-actions">
+            <a id="download-denoised" class="btn" download>⬇ Download denoised audio (WAV)</a>
+          </div>
+        </div>
+
+        <div class="result-block">
+          <h3>Waveform</h3>
+          <img id="img-waveform" class="viz" alt="Waveform of the reconstructed signal" />
+        </div>
+
+        <div class="result-block">
+          <h3>Spectrogram</h3>
+          <img id="img-spectrogram" class="viz" alt="Spectrogram of the reconstructed signal" />
+          <p class="muted" id="nyquist-note"></p>
+        </div>
+
+        <div class="result-block" id="text-block">
+          <h3>The audio, in text</h3>
+          <p id="analysis-summary" class="analysis-summary"></p>
+          <div class="analysis-grid" id="analysis-grid"></div>
+          <div class="band-energy" id="band-energy"></div>
+          <div class="burst-list" id="burst-list"></div>
+          <button id="copy-analysis" class="btn btn-ghost">⧉ Copy this text</button>
+        </div>
+
+        <div class="result-block" id="transcript-block">
+          <h3>Speech-to-text <span class="tag">experimental</span></h3>
+          <p id="transcript-text" class="transcript-text"></p>
+          <p id="transcript-note" class="muted"></p>
+        </div>
+
+        <div class="result-block" id="notes-block" hidden>
+          <h3>Processing notes</h3>
+          <ul id="notes-list"></ul>
+        </div>
+
+        <button id="restart-btn" class="btn">Process another video</button>
+      </section>
+
+    </section>
+
+    <!-- ================= HOW IT WORKS ================= -->
+    <section id="view-how" class="view">
+      <section class="card">
+        <h2>How It Works</h2>
+        <p>
+          Acoustic Eye is a web front-end around a <strong>phase-based Visual
+          Microphone</strong>. When sound waves hit an object, they cause tiny
+          surface vibrations — often far less than one pixel of motion in a video.
+          The algorithm measures those motions and turns them back into an audio
+          signal.
+        </p>
+
+        <h3>Pipeline</h3>
+        <ol class="pipeline">
+          <li><strong>Read frames</strong> — every frame is decoded, down-sampled,
+            converted to grayscale and normalised. Frames that fail to decode are
+            skipped, and the real count of usable frames is what drives every array
+            size (container metadata is never trusted).</li>
+          <li><strong>Complex steerable pyramid</strong> — each frame is decomposed
+            into oriented, band-pass sub-bands (via <code>pyrtools</code>). Each
+            coefficient has a local amplitude and a local phase.</li>
+          <li><strong>Local phase</strong> — local phase is where sub-pixel motion
+            shows up: a small shift of the image shifts the phase of each sub-band.</li>
+          <li><strong>Phase difference</strong> — for every frame and sub-band we
+            compute the phase difference against the first frame (wrapped to
+            (−π, π]). This is paper equation (2).</li>
+          <li><strong>Amplitude weighting</strong> — phase is reliable only where
+            contrast is high, so each phase difference is weighted by the squared
+            local amplitude (equation (3)).</li>
+          <li><strong>Per-band signal</strong> — the amplitude-weighted phase
+            differences are averaged over the whole frame and divided by the total
+            amplitude, giving one number per frame per sub-band.</li>
+          <li><strong>Band alignment</strong> — different sub-bands can be offset in
+            time; each band's signal is cross-correlation-aligned to a reference
+            band (equation (4)).</li>
+          <li><strong>Signal combination</strong> — the aligned per-band signals are
+            summed into a single motion signal (equation (5)).</li>
+          <li><strong>Filtering &amp; normalisation</strong> — a Butterworth
+            high-pass removes slow drift / DC, then the signal is centred and scaled
+            to [−1, 1].</li>
+          <li><strong>WAV generation</strong> — written as 16-bit PCM at a sample
+            rate equal to the video frame rate.</li>
+          <li><strong>Visualisation</strong> — waveform and spectrogram are rendered
+            server-side from the exact signal that was written to the WAV.</li>
+        </ol>
+
+        <h3>Why the sample rate equals the frame rate</h3>
+        <p>
+          The method produces <em>one measurement per video frame</em>. That makes
+          the output sample rate equal to the camera frame rate, and by the
+          Nyquist–Shannon theorem the highest frequency that can possibly be
+          represented is <strong>half the frame rate</strong>. A 30&nbsp;fps clip
+          can only carry information up to 15&nbsp;Hz; a 60&nbsp;fps clip up to
+          30&nbsp;Hz. The research results in the original paper used high-speed
+          cameras at 2&nbsp;kHz–20&nbsp;kHz. Acoustic Eye does <strong>not</strong>
+          upsample or invent frequencies the video cannot support, and it labels the
+          Nyquist limit on every result.
+        </p>
+
+        <h3>What makes a reconstruction succeed</h3>
+        <ul>
+          <li>High frame rate (the higher the better — 120/240&nbsp;fps phone
+            "slo-mo" helps a lot).</li>
+          <li>A loud, sustained sound source close to the object.</li>
+          <li>A lightweight, high-contrast, resonant object (chip bags, foil, paper,
+            leaves, thin plastic).</li>
+          <li>Bright, flicker-free lighting and a rock-steady camera (tripod).</li>
+          <li>Little to no camera noise; longer clips give more signal.</li>
+        </ul>
+      </section>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="view-about" class="view">
+      <section class="card">
+        <h2>About &amp; Attribution</h2>
+        <p>
+          <strong>Acoustic Eye</strong> is a student engineering project: a web
+          application that wraps an existing open-source Visual Microphone
+          implementation with video validation, a processing API, audio generation,
+          and waveform / spectrogram visualisation.
+        </p>
+
+        <h3>Original research</h3>
+        <p class="cite">
+          A. Davis, M. Rubinstein, N. Wadhwa, G. J. Mysore, F. Durand, W. T.
+          Freeman. <em>The Visual Microphone: Passive Recovery of Sound from
+          Video.</em> ACM Transactions on Graphics (Proc. SIGGRAPH), 33(4), 2014.
+        </p>
+
+        <h3>Reference implementation adapted</h3>
+        <p class="cite">
+          <em>visual-mic-master</em> — a Python re-implementation of MIT's Visual
+          Microphone by Antonio Musolino and Davide Sforza, released under the MIT
+          License (Copyright © 2020). Depends on OpenCV, SciPy, NumPy and
+          <em>pyrtools</em> (Lab for Computational Vision) for complex steerable
+          pyramids.
+        </p>
+
+        <h3>What is ours</h3>
+        <ul>
+          <li>The Acoustic Eye web UI, FastAPI backend and REST API.</li>
+          <li>Robust video reading with real frame counting and per-frame fault
+            tolerance.</li>
+          <li>Bug fixes to the reference code (see the project README).</li>
+          <li>WAV generation via <code>soundfile</code>, server-side visualisation,
+            job/stage progress reporting, tests and packaging.</li>
+        </ul>
+
+        <h3>Scientific honesty</h3>
+        <p>
+          This system <em>attempts</em> to recover acoustic information from tiny
+          visual vibrations. It cannot recover arbitrary audio from an arbitrary
+          video. With ordinary 30–60&nbsp;fps footage the recoverable band is only a
+          few tens of Hz, so results are typically a low rumble that correlates with
+          the sound rather than intelligible speech or music.
+        </p>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Acoustic Eye — visual acoustic reconstruction demo. Algorithm: Davis et al.,
+         SIGGRAPH 2014. Reference code: visual-mic-master (MIT). For research and
+         educational use.</p>
+    </div>
+  </footer>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

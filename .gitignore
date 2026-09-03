@@ -81,3 +81,19 @@ Module3_Fresh/data/
 
 # --- logs ---
 *.log
+
+# --- Acoustic Eye (visual microphone subsystem) ---------------------------
+# Source only. The 374 MB under acoustic-eye/ is its .venv, and the zips are
+# snapshots of the same trees that are already checked out beside them.
+Acoustic eye/**/.venv/
+Acoustic eye/*.zip
+Acoustic eye/visual-mic-master/
+Acoustic eye/acoustic-eye/outputs/
+Acoustic eye/acoustic-eye/uploads/
+
+# --- paper / handbook build artefacts ---
+paper/**/*.aux
+paper/**/*.out
+paper/**/*.synctex.gz
+paper/**/*.fls
+paper/**/*.fdb_latexmk

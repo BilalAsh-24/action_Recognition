@@ -1,0 +1,78 @@
+{
+  "steps": [
+    {
+      "label": "50 steps (production)",
+      "gen_s": 265.9,
+      "ok": true,
+      "score": 86.9,
+      "peak": -1.52,
+      "dyn": 32.6,
+      "bits": 15.75,
+      "harm": 0.0009,
+      "gain": -7.08,
+      "attacks": 7,
+      "gap": 1.4125833333333333,
+      "gap_sd": 0.12809365605767614
+    },
+    {
+      "label": "35 steps",
+      "gen_s": 200.4,
+      "ok": true,
+      "score": 86.3,
+      "peak": -2.19,
+      "dyn": 31.34,
+      "bits": 15.64,
+      "harm": 0.0009,
+      "gain": -6.23,
+      "attacks": 7,
+      "gap": 1.4124999999999999,
+      "gap_sd": 0.1280871187902983
+    },
+    {
+      "label": "25 steps",
+      "gen_s": 128.6,
+      "ok": true,
+      "score": 86.4,
+      "peak": -4.94,
+      "dyn": 29.07,
+      "bits": 15.18,
+      "harm": 0.0013,
+      "gain": -3.34,
+      "attacks": 7,
+      "gap": 1.41245,
+      "gap_sd": 0.12806751799994676
+    }
+  ],
+  "latent": [
+    {
+      "label": "30 s latent (production)",
+      "gen_s": 242.3,
+      "ok": true,
+      "score": 97.1,
+      "peak": -6.69,
+      "dyn": 43.71,
+      "bits": 14.89,
+      "harm": 0.0018,
+      "gain": -3.58,
+      "attacks": 16,
+      "gap": 0.6407466666666666,
+      "gap_sd": 0.04183475216717416
+    },
+    {
+      "label": "10 s latent",
+      "gen_s": 88.0,
+      "ok": true,
+      "score": 86.0,
+      "peak": 0.0,
+      "dyn": 61.13,
+      "bits": 16.0,
+      "harm": 0.0022,
+      "gain": -17.4,
+      "attacks": 8,
+      "gap": 0.7088857142857143,
+      "gap_sd": 0.2435276894117056
+    }
+  ],
+  "cup30": 1,
+  "cup10": 0
+}

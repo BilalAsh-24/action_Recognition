@@ -86,12 +86,9 @@ def run_pipeline(job: Job, store: JobStore) -> None:
         else:
             needed.setdefault(spec.key, spec)
 
-    if not needed:
-        store.stage(jid, "foley_generation", "skipped", 55, unsupported=unsupported)
-        raise RuntimeError(
-            "Action recognition completed, but no supported Foley action was found. "
-            "The original video can still be exported without generated audio.")
-
+    # No matching Foley class is a legitimate partial result, not a failure: the
+    # timeline is still real and the video is still delivered, silent. Failing the
+    # job here used to strand the user with nothing to export.
     generated: list[dict] = []
     for i, (key, spec) in enumerate(needed.items(), 1):
         base_pct = 51 + 21 * (i - 1) / max(1, len(needed))
@@ -117,7 +114,7 @@ def run_pipeline(job: Job, store: JobStore) -> None:
             "validated": bool(best)})
         store.stage(jid, "foley_generation", "active",
                     51 + 21 * i / max(1, len(needed)), generated_audio=generated)
-    store.stage(jid, "foley_generation", "done", 72,
+    store.stage(jid, "foley_generation", "skipped" if not needed else "done", 72,
                 generated_audio=generated, unsupported=unsupported)
 
     # ------------------------------------- 6. Foley quality validation
@@ -165,7 +162,7 @@ def run_pipeline(job: Job, store: JobStore) -> None:
                         "status": "no_usable_foley",
                         "candidates_tried": len(g["attempts"]),
                         "metrics": last["metrics"]})
-    store.stage(jid, "foley_validation", "done", 76,
+    store.stage(jid, "foley_validation", "skipped" if not generated else "done", 76,
                 generated_audio=generated, unsupported=unsupported,
                 report={**(job.report or {}), "validations": validations})
 

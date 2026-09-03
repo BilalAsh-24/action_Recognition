@@ -1,0 +1,175 @@
+{
+  "generations": 1,
+  "run": "web_object_placement_c1a36cad0de96bf5",
+  "config": {
+    "model": "MOSS-SoundEffect v2.0",
+    "device": "mps",
+    "dtype": "torch.bfloat16",
+    "prompt": "close-up realistic Foley of a small object being set down gently on a wooden table, one soft contact followed by a short natural settle and brief wooden resonance, restrained and believable, dry indoor recording, isolated Foley, no speech, no music, no ambience",
+    "prompt_sent_to_model": "close-up realistic Foley of a small object being set down gently on a wooden table, one soft contact followed by a short natural settle and brief wooden resonance, restrained and believable, dry indoor recording, isolated Foley, no speech, no music, no ambience duration: 10.0s",
+    "negative_prompt": "music, speech, talking, voice, singing, background ambience, room tone, environmental noise, crowd, traffic, cinematic sound design, electronic sounds, synthetic sounds, exaggerated impacts, reverb, dropping, breaking, smashing, multiple impacts",
+    "seconds": 10.0,
+    "denoised_seconds_internally": 30,
+    "num_inference_steps": 25,
+    "cfg_scale": 4.0,
+    "sigma_shift": 5.0,
+    "seed": 42,
+    "denoising_strength": 1.0,
+    "rand_device": "cpu",
+    "sample_rate": 48000,
+    "num_channels": 1,
+    "fp16_used": false,
+    "cuda_used": false,
+    "TORCHDYNAMO_DISABLE": "1"
+  },
+  "baseline": {
+    "used_gb": 4.178,
+    "available_gb": 11.168,
+    "swap_gb": 2.873,
+    "mps_alloc_gb": 0.0,
+    "mps_driver_gb": 0.0
+  },
+  "phase1": {
+    "seconds": 4.5,
+    "resident": {
+      "used_gb": 8.67,
+      "available_gb": 6.681,
+      "swap_gb": 2.873,
+      "mps_alloc_gb": 3.447,
+      "mps_driver_gb": 4.044
+    },
+    "context_posi_shape": [
+      1,
+      512,
+      2048
+    ],
+    "context_nega_shape": [
+      1,
+      512,
+      2048
+    ],
+    "residency_after_free": {
+      "Qwen3TextEncoder": 0
+    },
+    "after_free": {
+      "used_gb": 8.67,
+      "available_gb": 6.681,
+      "swap_gb": 2.873,
+      "mps_alloc_gb": 0.004,
+      "mps_driver_gb": 1.148
+    }
+  },
+  "mps_compat": {
+    "sinusoidal_embedding_1d": {
+      "max_abs_diff_vs_upstream_cpu": 0.0,
+      "exact_match": true,
+      "shape": [
+        1,
+        256
+      ]
+    },
+    "patched_modules": [
+      "moss_soundeffect_v2.diffsynth.models.wan_video_dit",
+      "moss_soundeffect_v2.diffsynth.models.wan_audio_dit",
+      "moss_soundeffect_v2.diffsynth.pipelines.wan_audio"
+    ]
+  },
+  "phase2_rope": {
+    "downcast_complex128_to_complex64": [
+      "freqs_cis_0",
+      "freqs_cis_1",
+      "freqs_cis_2"
+    ],
+    "lossless": "rope_apply reads .real/.imag at float32"
+  },
+  "phase2": {
+    "latent_shape": [
+      1,
+      128,
+      1500
+    ],
+    "num_samples": 1440000,
+    "num_channels": 1,
+    "steps": 25,
+    "seconds": 129.13,
+    "diffusion_seconds": 117.37,
+    "resident": {
+      "used_gb": 11.72,
+      "available_gb": 3.267,
+      "swap_gb": 2.873,
+      "mps_alloc_gb": 5.66,
+      "mps_driver_gb": 6.965
+    },
+    "latent_absmax": 6.5286407470703125,
+    "latent_std": 0.693297803401947,
+    "residency_after_free": {
+      "WanAudioModel": 0
+    },
+    "after_free": {
+      "used_gb": 11.72,
+      "available_gb": 3.267,
+      "swap_gb": 2.873,
+      "mps_alloc_gb": 0.006,
+      "mps_driver_gb": 1.312
+    }
+  },
+  "phase3": {
+    "seconds": 7.91,
+    "resident": {
+      "used_gb": 9.449,
+      "available_gb": 3.595,
+      "swap_gb": 2.873,
+      "mps_alloc_gb": 1.211,
+      "mps_driver_gb": 4.958
+    },
+    "decoded_shape": [
+      1,
+      1,
+      1440000
+    ],
+    "cropped_samples": 480000,
+    "residency_after_free": {
+      "DAC": 0
+    },
+    "after_free": {
+      "used_gb": 8.178,
+      "available_gb": 4.875,
+      "swap_gb": 2.873,
+      "mps_alloc_gb": 0.006,
+      "mps_driver_gb": 1.166
+    }
+  },
+  "warnings": [
+    "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+    "`torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.",
+    "datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, d"
+  ],
+  "memory": {
+    "baseline": {
+      "used_gb": 4.178,
+      "available_gb": 11.171,
+      "swap_gb": 2.873,
+      "mps_alloc_gb": 0.0,
+      "mps_driver_gb": 0.0
+    },
+    "peak_used_gb": 11.755,
+    "min_available_gb": 2.56,
+    "peak_swap_gb": 2.873,
+    "peak_mps_driver_gb": 6.965,
+    "swap_growth_gb": 0.0,
+    "used_growth_gb": 7.577,
+    "abort_threshold_gb": 1.5,
+    "breach": null
+  },
+  "total_seconds": 144.87,
+  "output": {
+    "path": "data/generated/moss_object_placement_c1a36cad0de96bf5.wav",
+    "sample_rate": 48000,
+    "channels": 1,
+    "subtype": "PCM_16",
+    "raw_peak": 0.05126953125,
+    "clipped_before_write": false,
+    "bytes": 960044
+  },
+  "status": "SUCCESS"
+}

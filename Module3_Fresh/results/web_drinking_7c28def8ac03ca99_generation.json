@@ -1,0 +1,175 @@
+{
+  "generations": 1,
+  "run": "web_drinking_7c28def8ac03ca99",
+  "config": {
+    "model": "MOSS-SoundEffect v2.0",
+    "device": "mps",
+    "dtype": "torch.bfloat16",
+    "prompt": "close-up realistic Foley of a person taking several natural sips of water from a ceramic mug, distinct sipping sounds followed by natural swallowing, subtle cup-to-lips contact and realistic ceramic handling, continuous recognizable drinking action, isolated Foley recording, no speech, no music, no ambience",
+    "prompt_sent_to_model": "close-up realistic Foley of a person taking several natural sips of water from a ceramic mug, distinct sipping sounds followed by natural swallowing, subtle cup-to-lips contact and realistic ceramic handling, continuous recognizable drinking action, isolated Foley recording, no speech, no music, no ambience duration: 10.0s",
+    "negative_prompt": "",
+    "seconds": 10.0,
+    "denoised_seconds_internally": 10,
+    "num_inference_steps": 50,
+    "cfg_scale": 4.0,
+    "sigma_shift": 5.0,
+    "seed": 42,
+    "denoising_strength": 1.0,
+    "rand_device": "cpu",
+    "sample_rate": 48000,
+    "num_channels": 1,
+    "fp16_used": false,
+    "cuda_used": false,
+    "TORCHDYNAMO_DISABLE": "1"
+  },
+  "baseline": {
+    "used_gb": 4.542,
+    "available_gb": 10.404,
+    "swap_gb": 2.115,
+    "mps_alloc_gb": 0.0,
+    "mps_driver_gb": 0.0
+  },
+  "phase1": {
+    "seconds": 4.7,
+    "resident": {
+      "used_gb": 8.56,
+      "available_gb": 6.367,
+      "swap_gb": 2.115,
+      "mps_alloc_gb": 3.447,
+      "mps_driver_gb": 4.044
+    },
+    "context_posi_shape": [
+      1,
+      512,
+      2048
+    ],
+    "context_nega_shape": [
+      1,
+      512,
+      2048
+    ],
+    "residency_after_free": {
+      "Qwen3TextEncoder": 0
+    },
+    "after_free": {
+      "used_gb": 8.56,
+      "available_gb": 6.367,
+      "swap_gb": 2.115,
+      "mps_alloc_gb": 0.004,
+      "mps_driver_gb": 1.148
+    }
+  },
+  "mps_compat": {
+    "sinusoidal_embedding_1d": {
+      "max_abs_diff_vs_upstream_cpu": 0.0,
+      "exact_match": true,
+      "shape": [
+        1,
+        256
+      ]
+    },
+    "patched_modules": [
+      "moss_soundeffect_v2.diffsynth.models.wan_video_dit",
+      "moss_soundeffect_v2.diffsynth.models.wan_audio_dit",
+      "moss_soundeffect_v2.diffsynth.pipelines.wan_audio"
+    ]
+  },
+  "phase2_rope": {
+    "downcast_complex128_to_complex64": [
+      "freqs_cis_0",
+      "freqs_cis_1",
+      "freqs_cis_2"
+    ],
+    "lossless": "rope_apply reads .real/.imag at float32"
+  },
+  "phase2": {
+    "latent_shape": [
+      1,
+      128,
+      500
+    ],
+    "num_samples": 480000,
+    "num_channels": 1,
+    "steps": 50,
+    "seconds": 113.43,
+    "diffusion_seconds": 101.29,
+    "resident": {
+      "used_gb": 11.692,
+      "available_gb": 3.258,
+      "swap_gb": 2.081,
+      "mps_alloc_gb": 5.659,
+      "mps_driver_gb": 6.773
+    },
+    "latent_absmax": 6.979070663452148,
+    "latent_std": 1.0345234870910645,
+    "residency_after_free": {
+      "WanAudioModel": 0
+    },
+    "after_free": {
+      "used_gb": 11.692,
+      "available_gb": 3.258,
+      "swap_gb": 2.081,
+      "mps_alloc_gb": 0.005,
+      "mps_driver_gb": 1.119
+    }
+  },
+  "phase3": {
+    "seconds": 4.7,
+    "resident": {
+      "used_gb": 9.503,
+      "available_gb": 5.638,
+      "swap_gb": 2.081,
+      "mps_alloc_gb": 1.219,
+      "mps_driver_gb": 2.81
+    },
+    "decoded_shape": [
+      1,
+      1,
+      480000
+    ],
+    "cropped_samples": 480000,
+    "residency_after_free": {
+      "DAC": 0
+    },
+    "after_free": {
+      "used_gb": 8.539,
+      "available_gb": 6.612,
+      "swap_gb": 2.081,
+      "mps_alloc_gb": 0.005,
+      "mps_driver_gb": 1.166
+    }
+  },
+  "warnings": [
+    "User provided device_type of 'cuda', but CUDA is not available. Disabling",
+    "`torch.nn.utils.weight_norm` is deprecated in favor of `torch.nn.utils.parametrizations.weight_norm`.",
+    "datetime.datetime.utcfromtimestamp() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.fromtimestamp(timestamp, d"
+  ],
+  "memory": {
+    "baseline": {
+      "used_gb": 4.542,
+      "available_gb": 10.404,
+      "swap_gb": 2.115,
+      "mps_alloc_gb": 0.0,
+      "mps_driver_gb": 0.0
+    },
+    "peak_used_gb": 12.055,
+    "min_available_gb": 2.569,
+    "peak_swap_gb": 2.115,
+    "peak_mps_driver_gb": 6.775,
+    "swap_growth_gb": 0.0,
+    "used_growth_gb": 7.513,
+    "abort_threshold_gb": 1.5,
+    "breach": null
+  },
+  "total_seconds": 125.78,
+  "output": {
+    "path": "data/generated/moss_drinking_7c28def8ac03ca99.wav",
+    "sample_rate": 48000,
+    "channels": 1,
+    "subtype": "PCM_16",
+    "raw_peak": 0.60546875,
+    "clipped_before_write": false,
+    "bytes": 960044
+  },
+  "status": "SUCCESS"
+}

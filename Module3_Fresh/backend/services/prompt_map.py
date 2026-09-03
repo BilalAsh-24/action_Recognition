@@ -4,7 +4,11 @@ Module 2 returns free-text action phrases ("walk around table", "drink from cup"
 This layer resolves an arbitrary phrase to a canonical Foley class, then supplies
 the MOSS prompt and the visual-localisation strategy for that class.
 
-Adding a new supported action means adding one entry here — no other file changes.
+Adding a curated action means adding one entry here — no other file changes.
+Any action NOT listed here is still sounded: resolve() falls through to
+prompt_synthesis.synthesise(), which writes a prompt and picks a sync strategy
+from the phrase itself. The only actions that stay silent are the ones in
+SILENT_ACTIONS, which are deliberately silent rather than unsupported.
 """
 from __future__ import annotations
 from dataclasses import dataclass, field
@@ -159,6 +163,19 @@ ACTION_PROMPT_MAP: dict[str, FoleySpec] = {
         match=["pick up object", "pick up the object", "picks up", "picking up",
                "lift object", "lifts the", "take from table"]),
 
+    "button_press": FoleySpec(
+        key="button_press", label="Button / lever press",
+        prompt=("close-up realistic Foley of a small plastic button or lever being pressed "
+                "firmly down, one crisp mechanical click with a short spring-loaded travel "
+                "and a soft seat at the bottom, small domestic appliance, restrained and "
+                "believable, dry indoor recording, isolated Foley, no speech, no music, "
+                "no ambience"),
+        negative=(_NEG_COMMON + ", beeping, electronic beep, alarm, motor, repeated clicks"),
+        strategy="contact", region="table", selection="event", target_rms_dbfs=-33.0,
+        match=["press button", "push button", "press switch", "flip switch",
+               "press lever", "push lever", "push down lever", "press start",
+               "click button", "toggle switch", "press key"]),
+
     "door_opening": FoleySpec(
         key="door_opening", label="Door opening",
         prompt=("close-up realistic Foley of a wooden door being opened, latch release followed by "
@@ -231,6 +248,15 @@ SILENT_ACTIONS: dict[str, str] = {
 }
 
 
+# Action verbs used by the fallback tier in resolve(). Stemmed forms, since the
+# matcher stems the phrase too ("placing" -> "place", "pushes" -> "push").
+_PLACE_VERBS = {"place", "put", "set", "drop", "insert", "load", "lower", "deposit",
+                "stack", "rest", "slide"}
+_PICKUP_VERBS = {"pick", "lift", "take", "grab", "remove", "pull", "retrieve", "raise"}
+_PRESS_VERBS = {"press", "push", "click", "flip", "toggle", "switch", "tap", "punch"}
+_ALL_ACTION_VERBS = _PLACE_VERBS | _PICKUP_VERBS | _PRESS_VERBS
+
+
 def resolve(action_phrase: str) -> tuple[Optional[FoleySpec], Optional[str]]:
     """Resolve a free-text action phrase to a FoleySpec.
 
@@ -278,10 +304,42 @@ def resolve(action_phrase: str) -> tuple[Optional[FoleySpec], Optional[str]]:
         if kw in p:
             return None, reason
 
-    return None, (f"No Foley class is defined for '{action_phrase}'. "
-                  f"This interval will remain silent.")
+    # Verb fallback. The keyword lists above name their object on purpose, so that
+    # "place spoon" cannot inherit ceramic-mug Foley. That precision left a hole:
+    # a real phrase like "place bread in toaster" is unmistakably a placement, but
+    # contains none of the literal surfaces the generic keywords ask for ("table",
+    # "down", "object"). This tier closes it — an action verb plus any object noun
+    # resolves to the matching generic class. It runs LAST, so specific classes and
+    # deliberate silences still win, which is what keeps the original bug fixed.
+    # The object must be a word that is not itself the verb. Compare on stems,
+    # or "pressing" counts as its own object and a bare verb resolves.
+    obj = [w for w in words
+           if w not in _ALL_ACTION_VERBS and stem(w) not in _ALL_ACTION_VERBS]
+    if obj:
+        for verbs, key in ((_PLACE_VERBS, "object_placement"),
+                           (_PICKUP_VERBS, "object_pickup"),
+                           (_PRESS_VERBS, "button_press")):
+            if stems & verbs:
+                return ACTION_PROMPT_MAP[key], None
+
+    # Open vocabulary. Nothing recognised is left unsounded: an action with no
+    # curated class gets a prompt written for it from the phrase itself. The curated
+    # classes above still win because they are hand-tuned and validated by ear;
+    # synthesis is the floor, not the ceiling.
+    from .prompt_synthesis import synthesise
+    return synthesise(action_phrase), None
 
 
 def supported_actions() -> list[dict]:
+    """The curated classes. Not an exhaustive list of what the system can sound —
+    any other action is handled by prompt synthesis at resolve() time."""
     return [{"key": s.key, "label": s.label, "strategy": s.strategy,
              "generic": s.generic, "keywords": s.match} for s in ACTION_PROMPT_MAP.values()]
+
+
+def vocabulary_mode() -> dict:
+    return {"curated_classes": len(ACTION_PROMPT_MAP),
+            "open_vocabulary": True,
+            "silent_actions": sorted(set(SILENT_ACTIONS)),
+            "note": ("Actions outside the curated classes are sounded via synthesised "
+                     "prompts; only SILENT_ACTIONS are intentionally left silent.")}
